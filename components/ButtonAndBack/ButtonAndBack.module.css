@@ -3,10 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position:absolute;
     top:770px;
-    left: 665px;
-    width: 380px;
+    position: absolute;
+    width: 100%;
 }
 
 .backButton p{

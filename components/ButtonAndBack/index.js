@@ -14,30 +14,29 @@ export default function ButtonAndBack({
 }){
     return(
         <>
-        <div className={styles.bothButtons}>
-            <ButtonColoured
-                href={linking}
-                text={buttonText}
-                bgColor={buttonColorBg}
-                primaryColor={buttonColorPrimary}
-                onClickHandler={onClickHandlerSecondaryMainButton}
-                tabbingButton={tabbingButtonSecondary}
+            <div className={styles.bothButtons}>
+                <ButtonColoured
+                    href={linking}
+                    text={buttonText}
+                    bgColor={buttonColorBg}
+                    primaryColor={buttonColorPrimary}
+                    onClickHandler={onClickHandlerSecondaryMainButton}
+                    tabbingButton={tabbingButtonSecondary}
 
-            />
-            <button 
-                onClick={handleBackClick} 
-                className={styles.backButton}
-            >
-                <Image 
-                    src="/icons/smallArrow.svg" 
-                    alt="small back arrow"
-                    width={6.25} 
-                    height={10} 
                 />
-                <p>Back</p>
-            </button>
-        </div>
-
+                <button 
+                    onClick={handleBackClick} 
+                    className={styles.backButton}
+                >
+                    <Image 
+                        src="/icons/smallArrow.svg" 
+                        alt="small back arrow"
+                        width={6.25} 
+                        height={10} 
+                    />
+                    <p>Back</p>
+                </button>
+            </div>
         </>
     )
 }

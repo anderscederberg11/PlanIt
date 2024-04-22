@@ -1,22 +1,29 @@
+.outerContainer {
+    width: 100%;
+    position: absolute;
+    flex-direction: column;
+    border: 2px solid yellow;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+}
+
 .questionsContainer{
     z-index: 1;
-    position: absolute;
     box-sizing: border-box;
     overflow: hidden;
-    top:0;
-    left:0;
     color: var(--white);
-    width: 282px;
-    line-height: normal;
-    font-family: Poppins;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    margin-left: 720px;
+    /* width: 282px; */
     margin-top: 160px;
+    margin-right: 0%;
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .questions{
+    width: 282px;
     padding: 0px;
     margin: 0px;
     line-height: normal;

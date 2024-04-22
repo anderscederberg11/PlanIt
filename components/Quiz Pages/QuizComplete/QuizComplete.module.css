@@ -4,9 +4,10 @@
     box-sizing: border-box;
     overflow: hidden;
     top: 125px;
-    left: 660px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding-left: 7%;
 }
 
 .headerContainer{
@@ -66,7 +67,7 @@
     line-height: normal;
     position: absolute;
     top: 70%;
-    left: 8.1%;
+    left: 14%;
 }
 
 .metric{

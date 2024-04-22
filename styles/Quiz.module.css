@@ -1,13 +1,24 @@
+.fullContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+    position: absolute;
+}
 .mainQuiz {
     width: 430px;
     height: 932px;
-    margin-left: 640px;
     background:transparent;
-    z-index: -999
+    margin: 0%;
+    z-index: -999;
+    position: absolute;
 }
 
 .space{
-    margin: 0px;
+    margin: 0%;
     z-index: -999;
 }
 

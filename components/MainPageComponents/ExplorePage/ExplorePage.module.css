@@ -1,0 +1,32 @@
+.explorePagePhrase{
+    font-family: var(--poppins);
+    color: var(--white);
+    margin-top: 530px;
+    margin-left: 40px;
+}
+
+.stylesContainerExplorePageWidth{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.stylesContainerExplorePage{
+    width:430px;
+}
+
+.carouselArea{
+    width:80%;
+    height:200px;
+    margin-top:10px;
+    margin-left: 40px;
+    left:40px;
+    display:grid;
+    grid-template-columns: 140px 140px 140px 140px 140px;
+    grid-gap: 25px;
+    place-items: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}

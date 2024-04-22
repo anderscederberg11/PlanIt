@@ -1,11 +1,19 @@
+.progContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  align-items: center;
+  top: 2vw;
+}
+
 .progressBar {
     border: 1px solid var(--white, #F2F5EA);
     border-radius: 11px;
     background-color: transparent;
     width: 280px;
     height: 11px;
-    top: 78px;
-    left: 715px;
     position: absolute;
   }
   

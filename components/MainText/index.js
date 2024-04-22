@@ -6,10 +6,13 @@ export default function MainText({
  }) {
     return(
         <>
+        <div className={styles.textContainerCenterer}>
             <div className={styles.textContainer}>
                 <h2 className={styles.pageHeader}>{titleText}</h2>
                 <p className={styles.pagePara}>{supplimentText}</p>
             </div>
+        </div>
+
         </>
     )
 }

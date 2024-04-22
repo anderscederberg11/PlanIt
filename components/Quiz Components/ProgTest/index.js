@@ -14,9 +14,11 @@ const ProgressBar = ({ currentQuestion }) => {
   };
 
   return (
-    <div className={styles.progressBar}>
-      <div className={styles.progress} style={progressBarWidth}></div>
-      <div className={styles.circle} style={circlePosition}>{currentQuestion}</div>
+    <div className={styles.progContainer}>
+      <div className={styles.progressBar}>
+        <div className={styles.progress} style={progressBarWidth}></div>
+        <div className={styles.circle} style={circlePosition}>{currentQuestion}</div>
+      </div>
     </div>
   );
 };

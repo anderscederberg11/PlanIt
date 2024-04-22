@@ -70,21 +70,17 @@ export default function Home() {
   
 
 return (
-    <div className={styles.mainQuiz}>
-      <style jsx global>{`
-        body {
-          margin: 0px;
-        }
-      `}
-      </style>
-      <ProgressBar currentQuestion={currentQuestion}/>
-      {showQuestionOne && <Question1 handleQuizNext1Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
-      {showQuestionTwo && <Question2 handleQuizNext2Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
-      {showQuestionThree && <Question3 handleQuizNext3Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
-      {showQuestionFour && <Question4 handleQuizNext4Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
-      {showQuestionFive && <Question5 handleQuizCompleteClick={handleFinishClick} handleUserAnswer={handleUserAnswer} />}
-      {showQuizComplete && <QuizComplete score={finalScore}/>}
-      <img src='/images/quizbackground.jpeg' alt='Outer Space Image' width={430} height={932} className={styles.space} />
-    </div>
+      <div className={styles.fullContainer}>
+          <div className={styles.mainQuiz}>
+          <ProgressBar currentQuestion={currentQuestion}/>
+          {showQuestionOne && <Question1 handleQuizNext1Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
+          {showQuestionTwo && <Question2 handleQuizNext2Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
+          {showQuestionThree && <Question3 handleQuizNext3Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
+          {showQuestionFour && <Question4 handleQuizNext4Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
+          {showQuestionFive && <Question5 handleQuizCompleteClick={handleFinishClick} handleUserAnswer={handleUserAnswer} />}
+          {showQuizComplete && <QuizComplete score={finalScore}/>}
+          <img src='/images/quizbackground.jpeg' alt='Outer Space Image' width={430} height={932} className={styles.space} />
+        </div>
+      </div>
   );
 }

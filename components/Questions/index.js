@@ -6,8 +6,10 @@ export default function Questions({
   tabbingQuestion
 }) {
   return (
-    <div className={styles.questionsContainer} tabIndex="1">
-      <p className={styles.questions}>Q: {questionText}</p>
+    <div className={styles.outerContainer}>
+      <div className={styles.questionsContainer} tabIndex="1">
+        <p className={styles.questions}>Q: {questionText}</p>
+      </div>
     </div>
   );
 }
