@@ -1,0 +1,27 @@
+.questionsContainer{
+    z-index: 1;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top:0;
+    left:0;
+    color: var(--white);
+    width: 282px;
+    line-height: normal;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    margin-left: 74px;
+    margin-top: 160px;
+}
+
+.questions{
+    padding: 0px;
+    margin: 0px;
+    line-height: normal;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+}

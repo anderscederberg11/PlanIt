@@ -1,0 +1,12 @@
+.progContainer {
+    z-index: 1;
+    position: absolute;
+    box-sizing: border-box;
+    top:0;
+    left:0;
+    border: 2px solid yellowgreen;
+    width: 280px;
+    height: 25px;
+    flex-shrink: 0;
+    
+}

@@ -1,0 +1,36 @@
+.headerSection{
+    width:100%;
+
+    display:flex;
+    justify-content: center;
+}
+
+.Test{
+    display:flex;
+    width:430px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.headerSectionIconLeft{
+    padding-left: 30px;
+    padding-bottom: 40px;
+}
+
+.headerSectionIconRight{
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+
+.headerSectionWords{
+    font-family: var(--poppins);
+    color: var(--white);
+    padding-right: 50px;
+    display:flex;
+    flex-direction: column;
+}
+
+.headerSectionH2{
+    margin-top: -10px;
+}

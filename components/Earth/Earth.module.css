@@ -1,0 +1,15 @@
+.earthPosition{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 932px;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top:0;
+    left:0;
+    z-index: -100;
+    pointer-events: auto;
+}
+

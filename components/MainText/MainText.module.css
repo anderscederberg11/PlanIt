@@ -1,0 +1,34 @@
+.textContainerCenterer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top:320px;
+    margin-left: -20px;
+}
+
+.textContainer{
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 380px;
+    color: var(--white);
+}
+.pageHeader{
+    width: 380px;
+    list-style: none;
+    font-family: var(--poppins);
+    font-weight: 500;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 25px;
+}
+.pagePara{
+    width: 348px;
+    color: var(--white);
+    font-family: var(--poppins);
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 25px;
+}

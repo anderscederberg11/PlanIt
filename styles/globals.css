@@ -1,0 +1,49 @@
+:root{
+  --black: #0C0C0C;
+  --jetBlack:#343434;
+  --green: #0BAA81;
+  --white: #F2F5EA;
+
+
+  --raleway: 'Raleway', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+
+  --title: 96px;
+  --button:16px;
+}
+
+html,
+body,
+#__next {
+    width: 430px;
+    margin:0;
+}
+
+h1, h2, h3, h4, h5, p{
+    font-weight:unset;
+    margin:0;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+h3{
+    font-size: 32px;
+}
+
+h4{
+    font-size: 28px;
+}
+
+h5{
+    font-size: 24px;
+}
+
+p{
+    font-size: 20px;
+}

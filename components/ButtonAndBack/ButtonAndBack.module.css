@@ -1,0 +1,24 @@
+.bothButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:770px;
+    position: absolute;
+    width: 100%;
+}
+
+.backButton p{
+    font-family: var(--poppins);
+    font-size: var(--button);
+    color: var(--white);
+    margin-left: 8px;
+}
+
+.backButton{
+    display: flex;
+    align-items: center;
+    border:none;
+    background:none;
+    padding-top: 20px;
+}

@@ -1,0 +1,48 @@
+.progressBar {
+  border: 2px solid red;
+  width: 280px;
+  height: 25px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  
+}
+
+.progress {
+  height: 11px;
+  border-radius: 11px 0px 5.5px 11px;
+  background: var(--green, #0BAA81);
+}
+
+.svg {
+  border: 2px solid blue;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  left: calc((100% / 6) * var(--currentStep) - 10px);
+  transform: translateY(-50%);
+  fill: var(--green, #0BAA81);
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.30));
+  margin: 0%;
+  padding: 0%;
+}
+
+.number {
+  color: #FFF;
+text-align: center;
+
+/* prog bar number ds */
+text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+
+/* H4 */
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}

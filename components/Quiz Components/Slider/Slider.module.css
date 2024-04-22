@@ -1,0 +1,53 @@
+.outerSliderContainer {
+    position: absolute;
+    margin-left: 56px;
+    margin-top: 465px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sliderContainer {
+    width: 320px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 21px;
+    position: relative;
+  }
+  
+  .slider {
+    border: none;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+    position: absolute;
+    padding: 0%;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 27px;
+    height: 27px;
+    background-color: #0BAA81;
+    border-radius: 50%; /* Make it a circle */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.60));
+    cursor: pointer;
+    margin-top: -5px; /* Adjust as needed to center vertically */
+  }
+  
+  /* .slider::-moz-range-thumb {
+    width: 27px;
+    height: 27px;
+    background-color: #0BAA81;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.60));
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 0px;
+  } */
+  

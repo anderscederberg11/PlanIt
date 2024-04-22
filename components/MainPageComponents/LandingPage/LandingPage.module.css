@@ -1,0 +1,36 @@
+.logoPlanit{
+    position:absolute;
+    font-family: var(--poppins);
+    font-weight: bold;
+    font-size: var(--title);
+    color: var(--white);
+    text-align: center;
+    margin:0;
+    margin-top: 140px;
+    height: 145px;
+    width:100%;
+}
+
+.catchphrase{
+    position:absolute;
+    color: var(--white);
+    text-align: center;
+    font-family: var(--raleway);
+    line-height: 40px;
+    height: 90px;
+    margin: 0;
+    width:100%;
+    margin-top:600px;
+}
+
+.LandingPageButtons{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    top:770px;
+    width:100%;
+}
+
+.LandingPageButtonsSpacer{
+    height: 10px;
+}

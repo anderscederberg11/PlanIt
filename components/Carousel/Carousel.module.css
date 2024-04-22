@@ -1,0 +1,49 @@
+.buttonWhole{
+    width:140px;
+    height:140px;
+    margin:0 auto;
+    overflow: hidden;
+    z-index: 2;
+    display:inline-block;
+}
+
+.buttonText{
+    text-decoration: none;
+    margin:0;
+    font-size: 18px;
+    font-family: var(--raleway);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.buttonStyling{
+    width:140px;
+    height:130px;
+    border:none;
+    border-radius: 20px;
+    transition: 0.3s ease;
+
+}
+
+.clicked{
+    width:140px;
+    height:130px;
+    border:none;
+    border-radius: 20px;
+    transform: translateY(5px);
+    transition: 0.3s ease;
+}
+
+.buttonLower{
+    width:140px;
+    height:130px;
+    border-radius: 20px;
+    margin-top: -125px;
+    background-color: var(--white);
+    z-index: -10;
+}
+
+.carouselBackgroundImage{
+    z-index:-1;
+    position:absolute;
+}
