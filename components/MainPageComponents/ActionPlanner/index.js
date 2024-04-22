@@ -1,6 +1,7 @@
 import ButtonAndBack from "@/components/ButtonAndBack";
 import MainText from "@/components/MainText";
 import Header from "@/components/Header";
+import styles from "@/components/MainPageComponents/ActionPlanner/ActionPlanner.module.css"
 
 export default function ActionPlanner({ handleGoHomeClick }){
     return(

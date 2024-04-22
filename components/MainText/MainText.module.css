@@ -1,10 +1,17 @@
+.textContainerCenterer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top:320px;
+    margin-left: -20px;
+}
+
 .textContainer{
     z-index: 1;
-    position: absolute;
     box-sizing: border-box;
     overflow: hidden;
-    top:320px;
-    left: 640px;
     width: 380px;
     color: var(--white);
 }

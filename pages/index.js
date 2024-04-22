@@ -8,6 +8,7 @@ import LandingPage from "@/components/MainPageComponents/LandingPage";
 import EnterName from "@/components/MainPageComponents/EnterName";
 import HomePage from "@/components/MainPageComponents/HomePage";
 import ActionPlanner from "@/components/MainPageComponents/ActionPlanner";
+import ExplorePage from "@/components/MainPageComponents/ExplorePage";
 import QuizComplete from "@/components/Quiz Pages/QuizComplete";
 import Question5 from "@/components/Quiz Pages/Question 5";
 
@@ -39,10 +40,14 @@ export default function Home() {
     setShowActionPlanner(true)
     console.log('3', showLandingPage);
   }
+  const handleExplore = () => {
+    setShowHomepage(false);
+    setShowExplore(true)
+  }
 
   const handleHomePage = () => {
-    console.log("handle triggered")
-    setShowActionPlanner(false)
+    setShowActionPlanner(false);
+    setShowExplore(false)
     setShowHomepage(true);
     console.log('4', showLandingPage);
   }
@@ -69,9 +74,14 @@ export default function Home() {
         {showHomepage && <HomePage/>}
         
         {showHomepage && (
-          <Footer handleActionPlannerClick={handleActionPlanner}/>
+          <Footer 
+            handleActionPlannerClick={handleActionPlanner}
+            handleExplorePageClick={handleExplore}
+          />
         )}
-        {showActionPlanner && <ActionPlanner/>}
+        {showActionPlanner && <ActionPlanner handleGoHomeClick={handleHomePage}/>}
+        {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
+        {/* this no work for the show explore */}
 
         {/* {showLandingPage && (
           <Question5 handleQuizCompleteClick={handleQuizComplete} />

@@ -3,7 +3,12 @@ import Footer from "../../Footer"
 import Header from "@/components/Header"
 import { useEffect, useState } from "react"
 
-export default function HomePage(){
+export default function HomePage({ handleBackClick }){
+
+    const handleClick = () => {
+        console.log('buttonTest')
+        handleBackClick();
+    };
 
     const [userTime, setUserTime] = useState([])
     const [timezone, setTimezone] = useState([]);
@@ -39,12 +44,17 @@ export default function HomePage(){
 
     return(
         <>
-            <Header src="/icons/longArrow.svg" width="31" height="20"/>
-            <div className={styles.coolAPIArea}>
-                <h5 className={styles.userTime}>{formatTime(userTime)}</h5>
-                <h4 className={styles.timeZone}>{timezone}</h4>
+            <Header src="/icons/longArrow.svg" width="31" height="20" handleBackOrHomeClick={handleClick}/>
+            <div className={styles.coolAPIAreaAdjust}>
+                <div className={styles.coolAPIArea}>
+                    <h5 className={styles.userTime}>{formatTime(userTime)}</h5>
+                    <h4 className={styles.timeZone}>{timezone}</h4>
+                </div>
             </div>
-            <p className={styles.homePagePhrase}>MAKING A DIFFERENCE<br></br>ONE STEP AT A TIME</p>
+            <div className={styles.homePageCatchCenter}>
+                <p className={styles.homePagePhrase}>MAKING A DIFFERENCE<br></br>ONE STEP AT A TIME</p>
+            </div>
+
             <Footer/>
         </>
     )
