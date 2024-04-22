@@ -1,0 +1,82 @@
+.completeContainer {
+    z-index: 4;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 125px;
+    left: 660px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer{
+    width: 348px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.complete{
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 20px;
+}
+
+.completePara{
+    width: 348px;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.yourFootprint{
+    width: 326px;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.scoreElement{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.scoreText{
+    color: var(--white);
+    text-align: left;
+    font-family: Poppins;
+    font-size: 66.514px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: absolute;
+    top: 70%;
+    left: 8.1%;
+}
+
+.metric{
+    width: 196px;
+    height: 72px;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 23px;
+}

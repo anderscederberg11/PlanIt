@@ -1,0 +1,45 @@
+.progressBar {
+    border: 1px solid var(--white, #F2F5EA);
+    border-radius: 11px;
+    background-color: transparent;
+    width: 280px;
+    height: 11px;
+    top: 78px;
+    left: 715px;
+    position: absolute;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: var(--green);
+    position: absolute;
+    border-radius: 11px;
+    max-width: 100%;
+  }
+  
+  .circle {
+    width: 25px;
+    height: 25px;
+    background-color: var(--green);
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+    transition: left 0.5s ease; /* Animation */
+  }
+  
+.progNext {
+    position: absolute;
+    top: 20px;
+    left: 0;
+  }
+  

@@ -1,0 +1,15 @@
+.mainQuiz {
+    width: 430px;
+    height: 932px;
+    margin-left: 640px;
+    background:transparent;
+    z-index: -999
+}
+
+.space{
+    margin: 0px;
+    z-index: -999;
+}
+
+
+
