@@ -49,10 +49,18 @@ export default function Home() {
     console.log('4', showLandingPage);
   }
 
+  //header area
+
   const handleLandingPage = () => {
     setShowHomepage(false)
     setShowLandingPage(true)
   }
+
+  const handleGoHomeFromExplore = () => {
+    setShowExplore(false)
+    setShowHomepage(true)
+  }
+  //header area
 
   //footer area
   const handleExplore = () => {
@@ -64,7 +72,6 @@ export default function Home() {
     setShowExplore(false)
     setShowActionPlanner(true)
   }
-
 
   //footer area
 
@@ -107,11 +114,18 @@ export default function Home() {
 
 
         {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
-        {/* this no work for the show explore */}
+        {/* this no work for the show explore IDK ANYMORE*/}
         {showExplore && (
+          <>
+          <Header 
+            src="/icons/Home.svg" 
+            width="30" 
+            height="32" 
+            handleBackOrHomeClick={handleGoHomeFromExplore}/>
           <Footer
             handleActionPlannerClick={handleActionPlannerOnExplore}
           />
+          </>
         )}
 
         

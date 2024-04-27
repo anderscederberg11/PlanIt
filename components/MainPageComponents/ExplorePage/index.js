@@ -4,11 +4,10 @@ import Footer from '@/components/Footer'
 import Carousel from '@/components/Carousel'
 import Link from 'next/link'
 
-export default function ExplorePage({ handleGoHomeFromExplore }){
+export default function ExplorePage({ }){
 
     return(
         <>
-            <Header src="/icons/Home.svg" width="30" height="32" handleBackOrHomeClick={handleGoHomeFromExplore}/>
             <div className={styles.stylesContainerExplorePageWidth}>
                 <div className={styles.stylesContainerExplorePage}>
                     <p className={styles.explorePagePhrase}>EXPLORE EARTHS<br></br>AFFECTED AREAS</p>
