@@ -3,7 +3,7 @@
     position: absolute;
     box-sizing: border-box;
     overflow: hidden;
-    top: 125px;
+    top: 75px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -66,8 +66,10 @@
     font-weight: 500;
     line-height: normal;
     position: absolute;
-    top: 70%;
-    left: 14%;
+    top: 377px;
+    left: 53px;
+    padding: 0%;
+    
 }
 
 .metric{
@@ -81,3 +83,49 @@
     line-height: normal;
     margin-left: 23px;
 }
+
+.category {
+    margin-top: 20px;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.categoryText {
+    font-size: 30px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.categoryMessage {
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.homeButton {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:770px;
+    width:100%
+}
+
+.backgroundBlur {
+    z-index: 0;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 430px;
+    height: 932px;
+    background-color: rgba(0, 0, 0, 0.257);
+    backdrop-filter: blur(8px);
+}
+
+
