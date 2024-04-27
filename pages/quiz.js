@@ -72,7 +72,7 @@ export default function Home() {
 return (
       <div className={styles.fullContainer}>
           <div className={styles.mainQuiz}>
-          <ProgressBar currentQuestion={currentQuestion}/>
+          <ProgressBar currentQuestion={currentQuestion} quizCompleted={showQuizComplete}/>
           {showQuestionOne && <Question1 handleQuizNext1Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
           {showQuestionTwo && <Question2 handleQuizNext2Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
           {showQuestionThree && <Question3 handleQuizNext3Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
