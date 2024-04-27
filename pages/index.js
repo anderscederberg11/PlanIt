@@ -41,10 +41,6 @@ export default function Home() {
     setShowActionPlanner(true)
     console.log('3', showLandingPage);
   }
-  const handleExplore = () => {
-    setShowHomepage(false);
-    setShowExplore(true)
-  }
 
   const handleHomePage = () => {
     setShowActionPlanner(false);
@@ -57,6 +53,20 @@ export default function Home() {
     setShowHomepage(false)
     setShowLandingPage(true)
   }
+
+  //footer area
+  const handleExplore = () => {
+    setShowHomepage(false);
+    setShowExplore(true)
+  }
+
+  const handleActionPlannerOnExplore = () => {
+    setShowExplore(false)
+    setShowActionPlanner(true)
+  }
+
+
+  //footer area
 
   const handleQuizComplete = () => {
     setShowLandingPage(false)
@@ -98,6 +108,13 @@ export default function Home() {
 
         {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
         {/* this no work for the show explore */}
+        {showExplore && (
+          <Footer
+            handleActionPlannerClick={handleActionPlannerOnExplore}
+          />
+        )}
+
+        
 
         {/* {showLandingPage && (
           <Question5 handleQuizCompleteClick={handleQuizComplete} />
