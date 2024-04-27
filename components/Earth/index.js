@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import styles from '@/components/Earth/Earth.module.css'
+import styles from '@/components/Earth/Earth.module.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 export default function Earth() {
-  const containerRef = useRef();
+  const canvasRef = useRef();
   const earthRef = useRef();
 
   useEffect(() => {
@@ -13,17 +13,13 @@ export default function Earth() {
     const scene = new THREE.Scene();
 
     // Create a new camera with a higher view distance
-    const camera = new THREE.PerspectiveCamera(75, 430 / 932, 0.1, 200); //second value is vp distance
-    camera.position.set(-25, 15, 40);
-    camera.lookAt(0, 0, 0);
+    const camera = new THREE.PerspectiveCamera(75, 430 / 932, 0.1, 200);
+    camera.position.set(-25, 15, 20); // Adjust camera position to center the Earth
 
     // Create a renderer with a black background
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
     renderer.setSize(430, 932);
     renderer.setClearColor(0x222222); // Greyish background
-    
-
-    containerRef.current.appendChild(renderer.domElement);
 
     // Create lighting
     const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
@@ -35,12 +31,9 @@ export default function Earth() {
     loader.load(
       '/planet-earth-nocloud.glb',
       function (gltf) {
-        // Check if the Earth model already exists
-        if (!earthRef.current) {
-          const earth = gltf.scene;
-          earthRef.current = earth;
-          scene.add(earth);
-        }
+        const earth = gltf.scene;
+        earthRef.current = earth;
+        scene.add(earth);
       },
       function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -57,21 +50,16 @@ export default function Earth() {
     controls.enableZoom = false; // Disable zooming
     controls.enableRotate = false; // Disable rotation of the camera
 
+    // Mouse interaction for rotating the earth
     let isDragging = false;
-    let previousMousePosition = {
-      x: 0,
-      y: 0
+    let previousMousePosition = { x: 0, y: 0 };
+
+    const onMouseDown = (event) => {
+      isDragging = true;
+      previousMousePosition = { x: event.clientX, y: event.clientY };
     };
 
-    containerRef.current.addEventListener('mousedown', event => {
-      isDragging = true;
-      previousMousePosition = {
-        x: event.clientX,
-        y: event.clientY
-      };
-    }, false);
-
-    containerRef.current.addEventListener('mousemove', event => {
+    const onMouseMove = (event) => {
       if (isDragging) {
         const deltaMove = {
           x: event.clientX - previousMousePosition.x,
@@ -83,19 +71,20 @@ export default function Earth() {
           earth.rotation.y += deltaMove.x * 0.01;
         }
 
-        previousMousePosition = {
-          x: event.clientX,
-          y: event.clientY
-        };
+        previousMousePosition = { x: event.clientX, y: event.clientY };
       }
-    }, false);
+    };
 
-    containerRef.current.addEventListener('mouseup', () => {
+    const onMouseUp = () => {
       isDragging = false;
-    }, false);
+    };
+
+    canvasRef.current.addEventListener('mousedown', onMouseDown, false);
+    canvasRef.current.addEventListener('mousemove', onMouseMove, false);
+    canvasRef.current.addEventListener('mouseup', onMouseUp, false);
 
     // Render the scene
-    const animate = function () {
+    const animate = () => {
       requestAnimationFrame(animate);
 
       // Rotate the earth slowly from left to right
@@ -110,23 +99,21 @@ export default function Earth() {
 
     animate();
 
-    // Adjust camera aspect ratio and renderer size on window resize
-    window.addEventListener("resize", function () {
-      camera.aspect = 430 / 932;
-      camera.updateProjectionMatrix();
-      renderer.setSize(430, 932);
-    });
-
     // Cleanup
     return () => {
-      window.removeEventListener("resize", null);
+      renderer.dispose(); // Dispose of the renderer to prevent memory leaks
+
+      // Remove event listeners
+      canvasRef.current.removeEventListener('mousedown', onMouseDown);
+      canvasRef.current.removeEventListener('mousemove', onMouseMove);
+      canvasRef.current.removeEventListener('mouseup', onMouseUp);
     };
   }, []);
 
   return (
     <div className={styles.earthPosition}>
-
-      <div ref={containerRef} className={styles.earthCentering}/>
+      <canvas ref={canvasRef}/>
     </div>
+    
   );
 }

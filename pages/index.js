@@ -80,6 +80,8 @@ export default function Home() {
           />
         )}
         {showActionPlanner && <ActionPlanner handleGoHomeClick={handleHomePage}/>}
+
+        
         {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
         {/* this no work for the show explore */}
 
@@ -87,7 +89,6 @@ export default function Home() {
           <Question5 handleQuizCompleteClick={handleQuizComplete} />
         )}
         {showQuizComplete && <QuizComplete/>} */}
-
         <Earth/>
       </main>
     </>

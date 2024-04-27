@@ -32,7 +32,6 @@ export default function EnterName({ handleContinueClick }){
                 ? 'Watch your profanity'
                 : ''
             : '';
-
         setErrorMessage(newErrorMessage);
     };
 
