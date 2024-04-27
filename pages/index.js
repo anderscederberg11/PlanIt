@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import Earth from "@/components/Earth";
 import Footer from "@/components/Footer"
+import Header from "@/components/Header";
 import HeadArea from "@/components/HeadArea";
 import LandingPage from "@/components/MainPageComponents/LandingPage";
 import EnterName from "@/components/MainPageComponents/EnterName";
@@ -52,6 +53,11 @@ export default function Home() {
     console.log('4', showLandingPage);
   }
 
+  const handleLandingPage = () => {
+    setShowHomepage(false)
+    setShowLandingPage(true)
+  }
+
   const handleQuizComplete = () => {
     setShowLandingPage(false)
     setShowQuizComplete(true)
@@ -74,14 +80,22 @@ export default function Home() {
         {showHomepage && <HomePage/>}
         
         {showHomepage && (
-          <Footer 
-            handleActionPlannerClick={handleActionPlanner}
-            handleExplorePageClick={handleExplore}
-          />
+          <>
+            <Header 
+              src="/icons/longArrow.svg" 
+              width="31" 
+              height="20" 
+              handleBackOrHomeClick={handleLandingPage}
+            />
+            <Footer 
+              handleActionPlannerClick={handleActionPlanner}
+              handleExplorePageClick={handleExplore}
+            />
+          </>
         )}
         {showActionPlanner && <ActionPlanner handleGoHomeClick={handleHomePage}/>}
 
-        
+
         {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
         {/* this no work for the show explore */}
 

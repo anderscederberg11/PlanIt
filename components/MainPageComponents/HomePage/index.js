@@ -44,7 +44,6 @@ export default function HomePage({ handleBackClick }){
 
     return(
         <>
-            <Header src="/icons/longArrow.svg" width="31" height="20" handleBackOrHomeClick={handleClick}/>
             <div className={styles.coolAPIAreaAdjust}>
                 <div className={styles.coolAPIArea}>
                     <h5 className={styles.userTime}>{formatTime(userTime)}</h5>
@@ -54,8 +53,6 @@ export default function HomePage({ handleBackClick }){
             <div className={styles.homePageCatchCenter}>
                 <p className={styles.homePagePhrase}>MAKING A DIFFERENCE<br></br>ONE STEP AT A TIME</p>
             </div>
-
-            <Footer/>
         </>
     )
 }
