@@ -24,6 +24,8 @@ export default function Home() {
   const [showActionPlanner, setShowActionPlanner] = useState(false);
   const [showQuizComplete, setShowQuizComplete] = useState(false)
 
+  const [animateEarth1, setAnimateEarth1] = useState(false);
+
   const handleGetStarted = () => {
     setShowLandingPage(false); // Hide LandingPage component
     setShowEnterName(true); // Show EnterName component
@@ -31,9 +33,9 @@ export default function Home() {
   };
 
   const handleContinue = () => {
+    setAnimateEarth1(true); //earth animation to middle
     setShowEnterName(false);
     setShowHomepage(true);
-    console.log('2', showLandingPage);
   }
 
   const handleActionPlanner = () => {
@@ -50,10 +52,10 @@ export default function Home() {
   }
 
   //header area
-
   const handleLandingPage = () => {
     setShowHomepage(false)
     setShowLandingPage(true)
+    // setAnimateEarth1(false); //earth SHOULD animation back to original 
   }
 
   const handleGoHomeFromExplore = () => {
@@ -128,13 +130,11 @@ export default function Home() {
           </>
         )}
 
-        
-
         {/* {showLandingPage && (
           <Question5 handleQuizCompleteClick={handleQuizComplete} />
         )}
         {showQuizComplete && <QuizComplete/>} */}
-        <Earth/>
+        <Earth animateEarth={animateEarth1}/>
       </main>
     </>
   );
