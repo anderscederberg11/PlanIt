@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '@/components/Earth/Earth.module.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+
 
 export default function Earth() {
   const canvasRef = useRef();
@@ -14,7 +16,10 @@ export default function Earth() {
 
     // Create a new camera with a higher view distance
     const camera = new THREE.PerspectiveCamera(75, 430 / 932, 0.1, 200);
-    camera.position.set(-25, 15, 20); // Adjust camera position to center the Earth
+
+    //camera.position.set(-25, 15, 20); THIS IS FOR CENTER POSITONING
+
+    camera.position.set(-25, 15, 20)
 
     // Create a renderer with a black background
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
@@ -33,6 +38,11 @@ export default function Earth() {
       function (gltf) {
         const earth = gltf.scene;
         earthRef.current = earth;
+
+        //earth.position.set(0,0,0) THIS IS FOR CENTER POSITIONING
+        earth.position.set(-10, 0, 15); //initial position
+        //earth.position.set(-17, -3, 13.7) //Secondary Position
+
         scene.add(earth);
       },
       function (xhr) {
@@ -104,9 +114,11 @@ export default function Earth() {
       renderer.dispose(); // Dispose of the renderer to prevent memory leaks
 
       // Remove event listeners
-      canvasRef.current.removeEventListener('mousedown', onMouseDown);
-      canvasRef.current.removeEventListener('mousemove', onMouseMove);
-      canvasRef.current.removeEventListener('mouseup', onMouseUp);
+      if (canvasRef.current) {
+        canvasRef.current.removeEventListener('mousedown', onMouseDown);
+        canvasRef.current.removeEventListener('mousemove', onMouseMove);
+        canvasRef.current.removeEventListener('mouseup', onMouseUp);
+      }
     };
   }, []);
 
