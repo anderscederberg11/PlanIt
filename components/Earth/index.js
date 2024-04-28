@@ -5,23 +5,19 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 
-
-export default function Earth() {
+export default function Earth({ animateEarth }) {
   const canvasRef = useRef();
   const earthRef = useRef();
+  const [isLoading, setIsLoading] = useState(true); //this is a bunch of dom stuff
 
   useEffect(() => {
-    // Create a new scene
     const scene = new THREE.Scene();
-
-    // Create a new camera with a higher view distance
     const camera = new THREE.PerspectiveCamera(75, 430 / 932, 0.1, 200);
 
     //camera.position.set(-25, 15, 20); THIS IS FOR CENTER POSITONING
 
     camera.position.set(-25, 15, 20)
 
-    // Create a renderer with a black background
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
     renderer.setSize(430, 932);
     renderer.setClearColor(0x222222); // Greyish background
@@ -44,21 +40,23 @@ export default function Earth() {
         //earth.position.set(-17, -3, 13.7) //Secondary Position
 
         scene.add(earth);
+        setIsLoading(false);
       },
       function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
       },
       function (error) {
         console.error(error);
+        setIsLoading(false);
       }
     );
 
     // Enable user control to rotate the earth
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Enable damping for smooth dragging
+    controls.enableDamping = true; // Enable damping for smoothher dragging
     controls.dampingFactor = 0.8; // Adjust damping factor
     controls.enableZoom = false; // Disable zooming
-    controls.enableRotate = false; // Disable rotation of the camera
+    controls.enableRotate = false; // Disables rotation of the camera
 
     // Mouse interaction for rotating the earth
     let isDragging = false;
@@ -89,9 +87,11 @@ export default function Earth() {
       isDragging = false;
     };
 
-    canvasRef.current.addEventListener('mousedown', onMouseDown, false);
-    canvasRef.current.addEventListener('mousemove', onMouseMove, false);
-    canvasRef.current.addEventListener('mouseup', onMouseUp, false);
+    if (canvasRef.current) {
+      canvasRef.current.addEventListener('mousedown', onMouseDown, false);
+      canvasRef.current.addEventListener('mousemove', onMouseMove, false);
+      canvasRef.current.addEventListener('mouseup', onMouseUp, false);
+    }
 
     // Render the scene
     const animate = () => {
@@ -103,29 +103,44 @@ export default function Earth() {
           child.rotation.y += 0.0005;
         }
       });
-
+//----------------------------------------------------------------------------------------------------------------------------------
+      // Animate the Earth's position towards the target position
+      setTimeout(() => {
+        if (animateEarth && earthRef.current) {
+          const currentPosition = earthRef.current.position;
+          const targetPosition = animateEarth ? new THREE.Vector3(0, 0, 0) : new THREE.Vector3(-10, 0, 15);
+          const distance = currentPosition.distanceTo(targetPosition);
+          if (distance > 0.1) {
+            const direction = targetPosition.clone().sub(currentPosition).normalize();
+            const speed = 0.1;
+            const newPosition = currentPosition.clone().add(direction.multiplyScalar(speed));
+            earthRef.current.position.copy(newPosition);
+          } else {
+            earthRef.current.position.copy(targetPosition);
+          }
+        }
+      }, 2000);
+//----------------------------------------------------------------------------------------------------------------------------------
       renderer.render(scene, camera);
     };
 
     animate();
-
     // Cleanup
     return () => {
       renderer.dispose(); // Dispose of the renderer to prevent memory leaks
-
-      // Remove event listeners
+    
+      // Remove event listeners if canvasRef.current is defined
       if (canvasRef.current) {
-        canvasRef.current.removeEventListener('mousedown', onMouseDown);
-        canvasRef.current.removeEventListener('mousemove', onMouseMove);
-        canvasRef.current.removeEventListener('mouseup', onMouseUp);
+        canvasRef.current.removeEventListener('mousedown', onMouseDown, false);
+        canvasRef.current.removeEventListener('mousemove', onMouseMove, false);
+        canvasRef.current.removeEventListener('mouseup', onMouseUp, false);
       }
     };
-  }, []);
+  }, [animateEarth, isLoading]);
 
   return (
     <div className={styles.earthPosition}>
-      <canvas ref={canvasRef}/>
+      {isLoading ? <h1>Loading your PlanIt...</h1> : <canvas ref={canvasRef} />}
     </div>
-    
   );
 }
