@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Questions from "@/components/Questions";
 import ButtonAndBack from "@/components/ButtonAndBack";
 import YesNoButton from "@/components/Quiz Components/YesNoButton";
+import QuizError from "@/components/Quiz Components/Quiz Error"; // Import the QuizError component
 
 export default function Question3({ handleQuizNext3Click, handleUserAnswer }) {
-  const handleYes = (score) => {
+  const [selectedAnswer, setSelectedAnswer] = useState(null);  
+  const [showError, setShowError] = useState(false);  
+
+  const handleYes = () => {
     console.log("Yes button clicked");
-    handleUserAnswer(3, score); // Capture the answer 'Yes'
+    handleUserAnswer(3, 2.5); 
+    setSelectedAnswer('Yes'); 
+    setShowError(false);       
   };
 
-  const handleNo = (score) => {
+  const handleNo = () => {
     console.log("No button clicked");
-    handleUserAnswer(3, score); // Capture the answer 'No'
+    handleUserAnswer(3, 0.5);
+    setSelectedAnswer('No');  
+    setShowError(false);      
   };
 
   const handleContinueClick = () => {
-    console.log("Continue button clicked");
-    handleQuizNext3Click(); // Navigate to the next question
+    if (!selectedAnswer) {
+      setShowError(true);  
+      console.log("Please select an answer before continuing.");
+    } else {
+      console.log("Continue button clicked with answer:", selectedAnswer);
+      handleQuizNext3Click(); 
+    }
   };
 
   return (
     <div>
       <Questions questionText="Do you compost organic waste?" />
       <YesNoButton onYes={handleYes} onNo={handleNo} />
+      {showError && <QuizError />} 
       <ButtonAndBack
-        linking='' // Keeping the linking property as per your original component
+        linking=''
         buttonText='CONTINUE'
-        buttonColorBg='var(--white)' // Ensure the background color is white
-        buttonColorPrimary='var(--green)' // Ensure the primary color is green
+        buttonColorBg='var(--white)' 
+        buttonColorPrimary='var(--green)' 
         onClickHandlerSecondaryMainButton={handleContinueClick}
-        nextQuestionHandler={handleQuizNext3Click} // Ensure this points to the next question handling function
       />
     </div>
   );
