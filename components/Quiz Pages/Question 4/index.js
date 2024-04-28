@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState} from "react";
 import Questions from "@/components/Questions";
 import Answers4 from "@/components/Quiz Components/Radio Answers/Answers 4";
 import ButtonAndBack from "@/components/ButtonAndBack";
+import QuizError from "@/components/Quiz Components/Quiz Error";
 
 export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showError, setShowError] = useState(false);  // State to track if an option has been selected
 
   const handleOptionChange = (value) => {
+    setSelectedOption(value);
+    setShowError(false);
     let score = 0; // Initialize score variable
     // Assign scores based on selected options
     switch (value) {
@@ -30,8 +35,13 @@ export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
   };
 
   const handleContinueClick = () => {
-    console.log("Continue button clicked");
-    handleQuizNext4Click();
+    if (!selectedOption) {
+      setShowError(true);
+    } else {
+      console.log("Continue button clicked");
+      setShowError(false);
+      handleQuizNext4Click();  
+    }
   };
 
   return (
@@ -46,6 +56,7 @@ export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
         onClickHandlerSecondaryMainButton={handleContinueClick}
         nextQuestionHandler={handleQuizNext4Click}
       />
+      {showError && <QuizError/>}
     </div>
   );
 }

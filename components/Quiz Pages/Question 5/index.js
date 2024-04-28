@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState} from "react";
 import Questions from "@/components/Questions";
 import Answers5 from "@/components/Quiz Components/Radio Answers/Answers 5";
 import ButtonColoured from "@/components/mainButton";
 import styles from '@/components/MainPageComponents/EnterName/EnterName.module.css';
+import QuizError from "@/components/Quiz Components/Quiz Error";
 
 export default function Question5({ handleQuizCompleteClick, handleUserAnswer }) {
   const customRadioStyle = {
-    marginTop: '450px',
+    marginTop: '430px',
   };
 
   const customButtonStyle = {
@@ -14,7 +15,12 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
     left: '25px',
   };
 
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showError, setShowError] = useState(false);
+
   const handleOptionChange = (value) => {
+    setSelectedOption(value);
+    setShowError(false);
     let score = 0; // Initialize score variable
     // Assign scores based on selected options
     switch (value) {
@@ -38,6 +44,16 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
     handleUserAnswer(5, score); // Updating the quiz's state with the selected answer and its score
   };
 
+  const handleFinishClick = () => {
+    if (!selectedOption) {
+      setShowError(true); // Show error if no option is selected
+    } else {
+      console.log("Finish clicked with selection");
+      setShowError(false);
+      handleQuizCompleteClick(); // Proceed to complete the quiz
+    }
+  };
+
   // Uncomment and use if additional logic is needed upon finishing
   // const handleFinishClick = () => {
   //   console.log("FINISH clicked");
@@ -53,8 +69,10 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
           customButtonStyle={customButtonStyle}
           href="#"
           text="FINISH"
-          onClickHandler={handleQuizCompleteClick} // Directly call or use handleFinishClick if additional logic is needed
+          onClickHandler={handleFinishClick} // Directly call or use handleFinishClick if additional logic is needed
         />
+        {showError && <QuizError style={{ position: 'absolute', top: '-770px'}}/>}
+        <styles></styles>
       </div>
     </div>
   );

@@ -1,0 +1,43 @@
+.errorContainer {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 430px;
+    height: 932px;
+    flex-shrink: 0;
+    background: rgba(12, 12, 12, 0.40);
+    backdrop-filter: blur(2.5px);
+    z-index: 1000;
+    padding: 0px;
+}
+
+.arrow {
+    width: 30px;
+    height: 15px;
+    flex-shrink: 0;
+    stroke-width: 4px;
+    stroke: var(--white, #F2F5EA);
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    top: 630px;
+}
+
+.errorText {
+    color: var(--white, #F2F5EA);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 336px;
+    height: 72px;
+    position: absolute;
+    top: 665px;
+}
+

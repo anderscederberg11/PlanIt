@@ -1,5 +1,5 @@
 .radioContainer {
-    z-index: 4;
+    z-index: 1001;
     width: 100%;
     position: absolute;
     box-sizing: border-box;
