@@ -1,5 +1,8 @@
 import styles from "./Settings.module.css"
 import React from "react"
+import Volume from "./SettingsVolume"
+import TextSize from "./TextSize"
+import Interface from "./Interface"
 
 export default function Settings() {
     
@@ -13,7 +16,9 @@ export default function Settings() {
                                 <path d="M7 1L1 7L7 13" stroke="#0BAA81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <p className={styles.settingsText}>Settings</p>
-
+                            <Volume/>
+                            <TextSize/>
+                            <Interface/>                       
                         </div>
                     </div>
                 </div>
