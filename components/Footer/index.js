@@ -1,13 +1,15 @@
+import About from '@/pages/about'
 import styles from './Footer.module.css'
+import Link from 'next/link'
 
-export default function Footer({ handleActionPlannerClick, handleExplorePageClick }){
+export default function Footer({ handleActionPlannerClick, handleExplorePageClick, handleAboutPageClick }){
     return(
         <>
             <footer className={styles.footer}>
                 <div className={styles.footerContainer}>
                     <button onClick={handleActionPlannerClick} className={styles.footerButton}>PLAN</button>
                     <button onClick={handleExplorePageClick} className={styles.footerButton}>EXPLORE</button>
-                    <button className={styles.footerButton}>ABOUT</button>
+                    <Link href={"/about"}><button onClick={handleAboutPageClick}className={styles.footerButton}>ABOUT</button></Link>
                 </div>
             </footer>
         </>
