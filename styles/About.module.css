@@ -3,6 +3,7 @@
     /* height: '932px'; */
     margin: 0 auto;
     padding: 0%;
+    z-index: -3;
   }
 
   .aboutContainer {
@@ -11,7 +12,7 @@
     width: 430px;
     height: 1910px;
     flex-shrink: 0;
-    border: 2px solid green;   
+    z-index: -2;  
 }
 
 .sebMainImage {
@@ -24,7 +25,7 @@
     position: absolute;
     top: 460px;
     margin-left: 25px; 
-    z-index: 1;
+    z-index: 2;
 }
 
 .sebName {
@@ -70,6 +71,31 @@
     backdrop-filter: blur(2.5px);
 }
 
+.sebCircleContainer {
+    display: flex;
+    width: 160px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 3;
+    position: absolute;
+    top: 460px;
+    margin-left: 245px;
+}
+
+.sebPillContainer {
+    display: flex;
+    width: 180px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 240px;
+    margin-left: 205px;
+}
+
 .separator {
     width: 430px;
     height: 626px;
@@ -77,5 +103,69 @@
     background: linear-gradient(180deg, rgba(12, 12, 12, 0.45) 0%, rgba(12, 12, 12, 0.99) 18%, #0C0C0C 75.5%, rgba(12, 12, 12, 0.00) 100%);
     position: absolute;
     top: 653px;
+    z-index: 1;
+}
+.andersMain {
+    position: absolute;
+    top: 1120px;
     z-index: 0;
+}
+
+.andersCircle {
+    position: absolute;
+    z-index: 1;
+    top: 1725px;
+    margin-left: 50px;
+}
+
+.andersTextContainer {
+    width: 280px;
+    height: 460px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 1440px;
+    margin-left: 125px;
+    z-index: 4;
+}
+
+.andersName {
+    width: 155px;
+    height: 74px;
+    flex-shrink: 0;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 20px;
+    margin-left: 85px;
+}
+
+.andersFavourites {
+    width: 330px;
+    height: 241px;
+    flex-shrink: 0;
+    color: var(--white);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 104px;
+    right: 20px;
+    text-align: right;
+}
+
+.favourite2{
+    color: var(--white);
+    text-align: right;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
