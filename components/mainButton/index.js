@@ -7,7 +7,6 @@ export default function ButtonColoured({
     text,
     bgColor="var(--white)",
     primaryColor="var(--green)",
-    tabbingButton="",
     onClickHandler
 }){
     const [clicked, setClicked] = useState(false);
@@ -21,11 +20,10 @@ export default function ButtonColoured({
 
     return(
         <>
-            <div className={styles.buttonWhole}
-                tabIndex={tabbingButton}
-            >
-                <Link href={href}>
+            <div className={styles.buttonWhole}>
+                <Link href={href} passHref>
                     <button 
+                        tabIndex={0} // Ensure this is the only focusable element
                         style={{ 
                             backgroundColor: bgColor, 
                         }} 
@@ -38,10 +36,9 @@ export default function ButtonColoured({
                             {text}
                         </p>
                     </button>
-                    <div className={styles.buttonLower} style={{ backgroundColor: primaryColor}}/>
                 </Link>
+                <div className={styles.buttonLower} style={{ backgroundColor: primaryColor}}/>
             </div>
         </>
     )
 }
-

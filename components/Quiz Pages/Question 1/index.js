@@ -6,12 +6,11 @@ import QuizError from '@/components/Quiz Components/Quiz Error';
 
 export default function Question1({ handleQuizNext1Click, handleUserAnswer }) {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [showError, setShowError] = useState(false);  // State to track if an option has been selected
-
-  // Function to handle option change from Answers1
+  const [showError, setShowError] = useState(false);  
+  
   const handleOptionChange = (value) => {
     setSelectedOption(value); 
-    setShowError(false); // Set the selected option
+    setShowError(false); 
     let score;
     switch (value) {
       case 'option1':
@@ -27,11 +26,11 @@ export default function Question1({ handleQuizNext1Click, handleUserAnswer }) {
         score = 3.2;
         break;
       default:
-        score = 0; // Handle unexpected values gracefully
+        score = 0; 
         break;
     }
     console.log("Selected answer:", value, "with score:", score);
-    handleUserAnswer(1, score); // Pass the question number and score back to the main quiz component
+    handleUserAnswer(1, score); 
   };
 
   const handleContinueClick = () => {
@@ -49,11 +48,11 @@ export default function Question1({ handleQuizNext1Click, handleUserAnswer }) {
       <Questions questionText="What is your primary mode of transportation for commuting?" />
       <Answers1 onOptionChange={handleOptionChange} />
       <ButtonAndBack
-        linking='' // Keep or adjust as necessary
+        linking='' 
         buttonText='CONTINUE'
         onClickHandlerSecondaryMainButton={handleContinueClick}
-        tabbingButtonSecondary="3" // Restore if it was originally there for accessibility reasons
-        disabled={!selectedOption}  // Disable the button if no option is selected
+        tabbingButtonSecondary="3" 
+        disabled={!selectedOption}  
       />
       {showError && <QuizError/>}
     </div>

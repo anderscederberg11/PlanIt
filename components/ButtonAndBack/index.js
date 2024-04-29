@@ -9,7 +9,7 @@ export default function ButtonAndBack({
     buttonColorPrimary, 
     onClickHandlerSecondaryMainButton, 
     // tabbingBack="",
-    tabbingButtonSecondary="",
+    tabbingButtonSecondary="0",
     handleBackClick 
 }){
     return(
@@ -26,6 +26,7 @@ export default function ButtonAndBack({
                 />
                 <button 
                     onClick={handleBackClick} 
+                    tabIndex={0}
                     className={styles.backButton}
                 >
                     <Image 
