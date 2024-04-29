@@ -15,7 +15,7 @@ const SliderComponent = ({ onChange }) => {
   const gradientBackground = `linear-gradient(to right, #0BAA81 0%, #0BAA81 ${value}%, var(--french-gray, #c9cad9) ${value}%, var(--french-gray, #c9cad9) 100%)`;
 
   return (
-    <div className={styles.outerSliderContainer}>
+    <div className={styles.outerSliderContainer} tabIndex={0}>
       <div className={styles.sliderContainer} style={{ background: gradientBackground }}>
         <input
           type="range"
