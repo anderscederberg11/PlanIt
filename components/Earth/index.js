@@ -140,7 +140,7 @@ export default function Earth({ animateEarth }) {
 
   return (
     <div className={styles.earthPosition}>
-      {isLoading ? <h1>Loading your PlanIt...</h1> : <canvas ref={canvasRef} />}
+      {isLoading ? <div className={styles.loadingMessageBackground}><h1 className={styles.loadingMessage}>Loading your PlanIt...</h1></div> : <canvas ref={canvasRef} />}
     </div>
   );
 }

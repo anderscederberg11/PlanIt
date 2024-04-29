@@ -10,3 +10,14 @@
     pointer-events: auto;
 }
 
+.loadingMessageBackground{
+    position:absolute;
+    backdrop-filter: blur(2px) brightness(0.8);
+    z-index:10000;
+}
+
+.loadingMessage{
+    font-family: var(--poppins);
+    margin-top: 467px;
+    color: var(--white);
+}

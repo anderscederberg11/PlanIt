@@ -1,7 +1,7 @@
 import ButtonColoured from "../../mainButton"
 import styles from "@/components/MainPageComponents/LandingPage/LandingPage.module.css"
 
-export default function LandingPage({ handleGetStartedClick }){
+export default function LandingPage({ handleGetStartedClick, handleStartTutorialClick }){
     return(
         <>
             <h1 className={styles.logoPlanit}>PlanIt</h1>
@@ -18,6 +18,7 @@ export default function LandingPage({ handleGetStartedClick }){
                     text="QUICK TUTORIAL" 
                     bgColor="var(--black)" 
                     primaryColor="var(--white)"
+                    onClickHandler={handleStartTutorialClick}
                 />
             </div>         
         </>

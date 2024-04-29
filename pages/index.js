@@ -11,7 +11,8 @@ import HomePage from "@/components/MainPageComponents/HomePage";
 import ActionPlanner from "@/components/MainPageComponents/ActionPlanner";
 import ExplorePage from "@/components/MainPageComponents/ExplorePage";
 import QuizComplete from "@/components/Quiz Pages/QuizComplete";
-import Question5 from "@/components/Quiz Pages/Question 5";
+import Tutorial1 from "@/components/MainPageComponents/Tutorial/Tutorial1";
+import Tutorial2 from "@/components/MainPageComponents/Tutorial/Tutorial2";
 
 
 
@@ -22,15 +23,35 @@ export default function Home() {
   const [showHomepage, setShowHomepage] = useState(false);
   const [showExplore, setShowExplore] = useState(false);
   const [showActionPlanner, setShowActionPlanner] = useState(false);
+  const [showTutorial1, setShowTutorial1] = useState(false)
+  const [showTutorial2, setShowTutorial2] = useState(false)
+
   const [showQuizComplete, setShowQuizComplete] = useState(false)
 
   const [animateEarth1, setAnimateEarth1] = useState(false);
 
+  //Landing page
   const handleGetStarted = () => {
     setShowLandingPage(false); // Hide LandingPage component
     setShowEnterName(true); // Show EnterName component
     console.log('1', showLandingPage);
   };
+
+  const handleStartTutorial = () => {
+    setShowLandingPage(false); 
+    setShowTutorial1(true)
+  }
+
+  const handleStartTutorial2 = () => {
+    setShowTutorial1(false)
+    setShowTutorial2(true)
+  }
+
+  const handleLandingPageAfterTutorial = () => {
+    setShowTutorial2(false)
+    setShowLandingPage(true)
+  }
+  //Landing Page
 
   const handleContinue = () => {
     setAnimateEarth1(true); //earth animation to middle
@@ -88,8 +109,24 @@ export default function Home() {
       <HeadArea title="Welcome to Planit!" description="We are an environment app raising awareness on earths most pressing issues"/>
       <main className={`${styles.main}`}>
         {showLandingPage && (
-          <LandingPage handleGetStartedClick={handleGetStarted}/>
+          <LandingPage 
+            handleGetStartedClick={handleGetStarted}
+            handleStartTutorialClick={handleStartTutorial}
+          />
         )}
+
+        {showTutorial1 && (
+          <Tutorial1
+            handleNextTutorialClick={handleStartTutorial2}
+          />
+        )}
+
+        {showTutorial2 && (
+          <Tutorial2
+            handleCompleteTutorialClick={handleLandingPageAfterTutorial}
+          />
+        )}
+
         {showEnterName && <EnterName/>} 
         {/* this renders the page so if you want to rerender it from another page using back, you dont add this line again. */}
 
