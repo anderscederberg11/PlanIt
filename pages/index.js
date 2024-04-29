@@ -13,6 +13,7 @@ import ExplorePage from "@/components/MainPageComponents/ExplorePage";
 import QuizComplete from "@/components/Quiz Pages/QuizComplete";
 import Tutorial1 from "@/components/MainPageComponents/Tutorial/Tutorial1";
 import Tutorial2 from "@/components/MainPageComponents/Tutorial/Tutorial2";
+import Settings from "@/components/Settings";
 
 
 
@@ -172,6 +173,7 @@ export default function Home() {
         )}
         {showQuizComplete && <QuizComplete/>} */}
         <Earth animateEarth={animateEarth1}/>
+        <Settings/>
       </main>
     </>
   );
