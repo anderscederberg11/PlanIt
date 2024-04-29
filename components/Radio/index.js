@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from "./Radio.module.css";
 
 const Radio = ({ options, onSelect, customRadioStyle }) => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const radioRefs = useRef([]);
 
   const handleOptionChange = (event) => {
     const value = event.target.value;
@@ -10,9 +11,26 @@ const Radio = ({ options, onSelect, customRadioStyle }) => {
     onSelect(value);
   };
 
+  const handleKeyDown = (event, index) => {
+    if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+      event.preventDefault();
+      const nextIndex = (index + 1) % options.length;
+      radioRefs.current[nextIndex].focus();
+    } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+      event.preventDefault();
+      const prevIndex = (index - 1 + options.length) % options.length;
+      radioRefs.current[prevIndex].focus();
+    }
+  };
+
+  // Ensure refs array is correctly sized
+  useEffect(() => {
+    radioRefs.current = radioRefs.current.slice(0, options.length);
+  }, [options.length]);
+
   return (
     <div className={`${styles.radioContainer}`} style={customRadioStyle}>
-      {options && options.map((option) => (
+      {options.map((option, index) => (
         <div key={option.value} className={styles.rowContainer}>
           <input
             type="radio"
@@ -21,9 +39,15 @@ const Radio = ({ options, onSelect, customRadioStyle }) => {
             value={option.value}
             checked={selectedOption === option.value}
             onChange={handleOptionChange}
-            style={{ display: 'none'}}
+            style={{ display: 'none' }}
+            ref={el => radioRefs.current[index] = el}  // Reference for focusing
           />
-          <label htmlFor={option.value} className={styles.optionContainer}>
+          <label
+            htmlFor={option.value}
+            className={styles.optionContainer}
+            tabIndex="0"
+            onKeyDown={(e) => handleKeyDown(e, index)}
+          >
             <svg
               width="32"
               height="32"
