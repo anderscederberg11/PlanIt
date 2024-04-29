@@ -43,9 +43,9 @@ export default function Home() {
   };
 
   const handleFinishClick = () => {
-    setShowQuestionFive(false); // Make sure to hide the last question
-    calculateFinalScore(); // Calculate the score before showing the completion screen
-    setShowQuizComplete(true); // Ensure this is set to display the QuizComplete component
+    setShowQuestionFive(false); 
+    calculateFinalScore();
+    setShowQuizComplete(true); 
   };
 
   const calculateFinalScore = () => {
@@ -53,7 +53,7 @@ export default function Home() {
   
     const totalScore = Object.values(userAnswers).reduce((acc, answer) => {
       console.log("Processing answer:", answer);
-      const score = parseFloat(answer); // Parse as a floating-point number
+      const score = parseFloat(answer); 
       if (isNaN(score)) {
         console.error("Failed to convert answer to score:", answer);
         return acc;

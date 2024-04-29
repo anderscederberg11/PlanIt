@@ -23,7 +23,7 @@ const Radio = ({ options, onSelect, customRadioStyle }) => {
     }
   };
 
-  // Ensure refs array is correctly sized
+  
   useEffect(() => {
     radioRefs.current = radioRefs.current.slice(0, options.length);
   }, [options.length]);
@@ -40,7 +40,7 @@ const Radio = ({ options, onSelect, customRadioStyle }) => {
             checked={selectedOption === option.value}
             onChange={handleOptionChange}
             style={{ display: 'none' }}
-            ref={el => radioRefs.current[index] = el}  // Reference for focusing
+            ref={el => radioRefs.current[index] = el}  
           />
           <label
             htmlFor={option.value}

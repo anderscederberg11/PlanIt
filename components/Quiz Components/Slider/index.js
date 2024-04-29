@@ -2,12 +2,12 @@ import { useState } from 'react';
 import styles from "./Slider.module.css"
 
 const SliderComponent = ({ onChange }) => {
-  const [value, setValue] = useState(0); // State to hold the value of the slider
+  const [value, setValue] = useState(0); 
 
   const handleChange = (e) => {
     const newValue = parseInt(e.target.value);
-    setValue(newValue); // Update the value as the slider moves
-    onChange(newValue); // Call the passed onChange function with the new value
+    setValue(newValue); 
+    onChange(newValue); 
   };
 
   const kilometers = Math.round((value / 100) * 800);

@@ -8,9 +8,9 @@ const options = [
   { label: 'Often', value: 'option4' }
 ];
 
-const Answers4 = ({ onOptionChange }) => {  // Accepting onOptionChange as a prop
+const Answers4 = ({ onOptionChange }) => {  
   const handleOptionSelect = (value) => {
-    onOptionChange(value);  // Pass the selected value to the parent component's handler
+    onOptionChange(value);  
   };
 
   return (

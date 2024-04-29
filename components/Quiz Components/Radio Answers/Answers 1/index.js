@@ -10,8 +10,8 @@ const options = [
 
 const Answers1 = ({ onOptionChange }) => {
   const handleOptionSelect = (value) => {
-    console.log("Option selected: ", value);  // You can add any specific logic here
-    onOptionChange(value);  // Then pass the selected value up to the parent component
+    console.log("Option selected: ", value);  
+    onOptionChange(value);  
   };
 
   return (

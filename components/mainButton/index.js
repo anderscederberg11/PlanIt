@@ -23,7 +23,7 @@ export default function ButtonColoured({
             <div className={styles.buttonWhole}>
                 <Link href={href} passHref>
                     <button 
-                        tabIndex={0} // Ensure this is the only focusable element
+                        tabIndex={0} 
                         style={{ 
                             backgroundColor: bgColor, 
                         }} 
