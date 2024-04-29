@@ -7,6 +7,7 @@ import Question3 from '@/components/Quiz Pages/Question 3';
 import Question4 from '@/components/Quiz Pages/Question 4';
 import Question5 from '@/components/Quiz Pages/Question 5';
 import QuizComplete from '@/components/Quiz Pages/QuizComplete';
+import HeadArea from '@/components/HeadArea';
 
 export default function Home() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
@@ -70,7 +71,9 @@ export default function Home() {
   
 
 return (
-      <div className={styles.fullContainer}>
+      <>
+        <HeadArea title="Welcome to Our PlanIt Quiz!" description="Answer a few questions to see your carbon footprint!"/>
+        <div className={styles.fullContainer}>
           <div className={styles.mainQuiz}>
           <ProgressBar currentQuestion={currentQuestion} quizCompleted={showQuizComplete}/>
           {showQuestionOne && <Question1 handleQuizNext1Click={handleQuizNextClick} handleUserAnswer={handleUserAnswer} />}
@@ -82,5 +85,7 @@ return (
           <img src='/images/quizbackground.jpeg' alt='Outer Space Image' width={430} height={932} className={styles.space} />
         </div>
       </div>
+      </>
+
   );
 }
