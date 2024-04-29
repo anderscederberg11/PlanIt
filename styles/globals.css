@@ -15,8 +15,9 @@
   html,
   body,
   #__next {
-      width: 430px;
+      width: 100%;
       margin:0;
+      background-color: var(--black);
   }
 
   h1, h2, h3, h4, h5, p{
