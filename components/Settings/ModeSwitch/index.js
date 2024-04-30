@@ -44,12 +44,12 @@ export const InterfaceMode = ({
           >
             {state.property1 === "variant-2" && <>Dark</>}
 
-            {state.property1 === "default" && <>Bright</>}
+            {state.property1 === "default" && <>Light</>}
           </div>
           {state.property1 === "default" && <img className={`${classes.sun} ${sunClassName}`} alt="Sun" src="/images/sunwhite.svg"/>}
         </div>
         <div className={classes.bright}>
-          {state.property1 === "variant-2" && <>Bright</>}
+          {state.property1 === "variant-2" && <>Light</>}
 
           {state.property1 === "default" && <>Dark</>}
         </div>

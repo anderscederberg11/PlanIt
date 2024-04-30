@@ -3,6 +3,7 @@ import React from "react"
 import Volume from "./SettingsVolume"
 import TextSize from "./TextSize"
 import Interface from "./Interface"
+import { Voice } from "./Voice"
 
 export default function Settings() {
     
@@ -18,7 +19,15 @@ export default function Settings() {
                             <p className={styles.settingsText}>Settings</p>
                             <Volume/>
                             <TextSize/>
-                            <Interface/>                       
+                            <Interface/> 
+                            <Voice
+                                divClassName="design-component-instance-node"
+                                imagesOffWhite="/images/off-white.svg"
+                                imagesOffWhiteClassName="voice-2"
+                                imagesOnGrey="/images/on-grey.svg"
+                                overlapGroupClassName="voice-instance"
+                                property1="default"
+                            />;
                         </div>
                     </div>
                 </div>
