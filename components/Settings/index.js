@@ -3,13 +3,24 @@ import React from "react"
 import Volume from "./SettingsVolume"
 import TextSize from "./TextSize"
 import Interface from "./Interface"
+import { useTheme } from "../Theme"
+import { useState } from "react"
 import { Voice } from "./Voice"
 
 export default function Settings() {
+
+    const { theme } = useTheme();
+
+    const themeStyles = {
+        '--black': theme === 'dark' ? '#FFFFFF' : '#0C0C0C',
+        '--white': theme === 'dark' ? '#000000' : '#F2F5EA', 
+    }
+
+    const [showSettings, setShowSettings] = useState(true);
     
     return(
         <>
-            <div className={styles.mainContainer}>
+            <div className={styles.mainContainer} style={themeStyles}>
                 <div className={styles.blur}>
                     <div className={styles.settingsContainer}>
                         <div className={styles.settingsHeader}>
@@ -19,7 +30,7 @@ export default function Settings() {
                             <p className={styles.settingsText}>Settings</p>
                             <Volume/>
                             <TextSize/>
-                            <Interface/> 
+                            <Interface/>
                             <Voice
                                 divClassName="design-component-instance-node"
                                 imagesOffWhite="/images/off-white.svg"

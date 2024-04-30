@@ -22,6 +22,7 @@ export const Voice = ({
         dispatch("click");
       }}
     >
+      <h2 className={`${classes['voice-text']}`}>Text to Speech</h2>
       <div className={`${classes['overlap-group']} ${classes[state.property1]} ${overlapGroupClassName}`}>
         <div className={`${classes.off} ${divClassName}`}>
           {state.property1 === "default" && <>Off</>}

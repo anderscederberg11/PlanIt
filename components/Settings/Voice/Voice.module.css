@@ -10,6 +10,25 @@
     top: 594px;
     left: 120px;
   }
+
+  .voice .voice-text {
+    display: flex;
+    width: 130.5px;
+    height: 26.413px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black, #0C0C0C);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: -35px;
+    left: 28px;
+  }
   
   .voice .overlap-group {
     background-color: var(--green);
