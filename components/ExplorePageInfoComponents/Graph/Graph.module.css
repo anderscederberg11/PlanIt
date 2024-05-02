@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     position:absolute;
-    z-index: 2;
-    margin-top:350px;
+    z-index: 1;
+    margin-top:450px;
     height:250px;
 }
 
@@ -12,9 +12,9 @@
     width:430px;
     display: flex;
     justify-content: center;
+    position:relative;
 }
 
 .graphWrapWidth{
     width:90%;
-    background-color: var(--black);
 }

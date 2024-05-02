@@ -51,7 +51,7 @@ export default function EnterName({ handleContinueClick }){
                 {errorMessage && <p style={{ color: '#F4557E' }} className={styles.stylinError}>{errorMessage}</p>}
             </label>
             <div className={styles.EnterNamePageButton}>
-                {firstNameValid ? (
+            {firstNameValid ? (
                         <div>
                             <ButtonColoured 
                                 href={{

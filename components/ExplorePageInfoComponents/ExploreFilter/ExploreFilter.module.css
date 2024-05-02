@@ -1,0 +1,120 @@
+.wrapper {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    z-index: 2000;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    flex-direction: column;  /* changed Line */
+}
+
+.card {
+    height: 140px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); 
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    background-color: var(--green);
+}
+
+.card > .row {
+    color: var(--white);
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: -25px;
+    height: 100px;
+}
+
+.card > .row > .icon {
+    background: var(--white);
+    color: var(--black);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.showinArea h4{
+    font-family: var(--poppins);
+}
+
+.card > .row > .showinArea > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    width: 300px;
+    height: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.card > .row > .showinArea > .description p {
+    color: var(--white);
+    font-family: var(--poppins);
+    font-size: var(--button);
+    margin-bottom: 40px;
+}
+
+.description h4 {
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.showinArea{
+    display: flex;
+    flex-direction: column;
+    transform: translateY(18px);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); 
+}
+
+.container input {
+    display: none;
+}
+
+.container input:checked + label {
+    height: 300px;
+}
+
+.container input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.container input:checked + label .showinArea {
+    transform: translateY(5px);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); 
+}
+
+.card[for="c1"] {
+    /* background-image: url('./img1.jpeg'); */
+}
+.card[for="c2"] {
+    /* background-image: url('./img2.jpeg'); */
+}
+.card[for="c3"] {
+    /* background-image: url('./img3.jpeg'); */
+}
+.card[for="c4"] {
+    /* background-image: url('./img4.jpeg'); */
+}
