@@ -4,7 +4,7 @@ import styles from './ProgTest.module.css';
 const ProgressBar = ({ currentQuestion, quizCompleted }) => {
   let progress;
   if (quizCompleted) {
-    progress = 100; // If quiz is completed, set progress to 100%
+    progress = 100; 
   } else {
     progress = (currentQuestion - 1) / 5 * 100;
   }

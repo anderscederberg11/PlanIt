@@ -1,0 +1,111 @@
+.voice {
+    background-color: var(--white);
+    border: 0.6px solid;
+    border-color: var(--grey);
+    border-radius: 46px;
+    height: 48px;
+    position: absolute;
+    width: 190px;
+    cursor: pointer;
+    top: 594px;
+    left: 120px;
+  }
+
+  .voice .voice-text {
+    display: flex;
+    width: 130.5px;
+    height: 26.413px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black, #0C0C0C);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: -35px;
+    left: 28px;
+  }
+  
+  .voice .overlap-group {
+    background-color: var(--green);
+    border-radius: 45px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    width: 95px;
+  }
+  
+  .voice .off {
+    color: var(--white);
+    font-family: var(--settings-p-font-family);
+    font-size: var(--settings-p-font-size);
+    font-style: var(--settings-p-font-style);
+    font-weight: var(--settings-p-font-weight);
+    height: 17px;
+    left: 50px;
+    letter-spacing: var(--settings-p-letter-spacing);
+    line-height: var(--settings-p-line-height);
+    position: absolute;
+    text-align: center;
+    top: 14px;
+    width: 21px;
+  }
+  
+  .voice .images-off-white {
+    height: 25px;
+    left: 11px;
+    position: absolute;
+    top: 11px;
+    width: 25px;
+  }
+  
+  .voice .on {
+    color: var(--grey);
+    font-family: var(--settings-p-font-family);
+    font-size: var(--settings-p-font-size);
+    font-style: var(--settings-p-font-style);
+    font-weight: var(--settings-p-font-weight);
+    height: 17px;
+    letter-spacing: var(--settings-p-letter-spacing);
+    line-height: var(--settings-p-line-height);
+    position: absolute;
+    text-align: center;
+    top: 14px;
+    width: 21px;
+  }
+  
+  .voice .images-on-grey {
+    height: 25px;
+    position: absolute;
+    top: 11px;
+    width: 25px;
+  }
+  
+  .voice .default {
+    left: 0;
+  }
+  
+  .voice .variant-2 {
+    left: 96px;
+  }
+  
+  .voice .property-1-default {
+    left: 146px;
+  }
+  
+  .voice .property-1-variant-2 {
+    left: 50px;
+  }
+  
+  .voice .property-1-0-default {
+    left: 107px;
+  }
+  
+  .voice .property-1-0-variant-2 {
+    left: 11px;
+  }
+  

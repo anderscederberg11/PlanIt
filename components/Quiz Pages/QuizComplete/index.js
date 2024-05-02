@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonColoured from '@/components/mainButton';
 import styles from "./QuizComplete.module.css";
 
-export default function QuizComplete({ score }) {  // Accept score as a prop
+export default function QuizComplete({ score }) {  
 
     let category;
     let categoryMessage;

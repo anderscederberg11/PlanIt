@@ -10,7 +10,7 @@ const options = [
 
 const Answers5 = ({ customRadioStyle, onOptionChange }) => {
   const handleOptionSelect = (value) => {
-    onOptionChange(value); // Pass the selected value to the parent component's handler
+    onOptionChange(value); 
   };
 
   return (

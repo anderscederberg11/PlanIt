@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Questions from "@/components/Questions";
 import ButtonAndBack from "@/components/ButtonAndBack";
 import YesNoButton from "@/components/Quiz Components/YesNoButton";
-import QuizError from "@/components/Quiz Components/Quiz Error"; // Import the QuizError component
+import QuizError from "@/components/Quiz Components/Quiz Error";
 
 export default function Question3({ handleQuizNext3Click, handleUserAnswer }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);  

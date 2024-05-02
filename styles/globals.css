@@ -3,6 +3,7 @@
     --jetBlack:#343434;
     --green: #0BAA81;
     --white: #F2F5EA;
+    --grey: #C9CAD9;
   
   
     --raleway: 'Raleway', sans-serif;
@@ -10,6 +11,18 @@
   
     --title: 96px;
     --button:16px;
+    --settings-p-font-family: "Poppins";
+    --settings-p-font-size: 14px;
+    --settings-p-font-style: normal;
+    --settings-p-font-weight: 400;
+    --settings-p-letter-spacing: 0px;
+    --settings-p-line-height: normal;
+    --settings-sec-head-font-family: "Poppins";
+    --settings-sec-head-font-size: 16px;
+    --settings-sec-head-font-style: normal;
+    --settings-sec-head-font-weight: 400;
+    --settings-sec-head-letter-spacing: 0px;
+    --settings-sec-head-line-height: normal;
   }
   
   html,
@@ -48,4 +61,6 @@
   p{
       font-size: 20px;
   }
+
+  
   

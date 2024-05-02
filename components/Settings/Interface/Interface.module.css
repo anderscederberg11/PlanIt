@@ -1,0 +1,13 @@
+.interfaceContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 262px;
+    height: 74px;
+    position: absolute;
+    top: 475px;
+    left: 82px;
+    gap: 10px;
+}
+

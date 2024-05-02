@@ -1,0 +1,76 @@
+.sizeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 262px;
+    height: 74px;
+    position: absolute;
+    top: 375px;
+    left: 82px;
+    gap: 10px;
+}
+
+.sizeText {
+    display: flex;
+    width: 100px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--black);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.textButtons {
+    width: 220px;
+    height: 40.782px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+.small, .medium, .large {
+    background-color: transparent;
+    border: 1.5px solid var(--grey);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    color: var(--grey);
+    font-family: Poppins;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.small, .medium, .large
+
+.small {
+    font-size: 10px;    
+}
+
+.medium {
+    font-size: 15px;
+}
+
+.large {
+    font-size: 20px;
+}
+
+.selected {
+    background-color: var(--green);
+    color: var(--white);
+    border: 1.5px solid var(--green);
+}

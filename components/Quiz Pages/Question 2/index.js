@@ -10,7 +10,7 @@ export default function Question2({ handleQuizNext2Click, handleUserAnswer }) {
     console.log("Selected kilometers:", kilometers);
     console.log("Score for question 2:", score);
     
-    // Pass the calculated score as the user's answer
+    
     handleUserAnswer(2, score.toFixed(1));
   };
 

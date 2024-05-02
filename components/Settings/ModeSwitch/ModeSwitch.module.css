@@ -1,0 +1,153 @@
+.interface-mode {
+    height: 70px;
+    position: relative;
+    width: 190px;
+  }
+  
+  .interface-mode .overlap-group {
+    border: 0.6px solid;
+    border-color: var(--grey);
+    height: 48px;
+    left: 0;
+    position: absolute;
+    top: 22px;
+    width: 190px;
+    cursor: pointer;
+  }
+  
+  .interface-mode .overlap {
+    background-color: var(--green);
+    border: 0.6px solid;
+    border-color: var(--green);
+    height: 48px;
+    position: absolute;
+    top: 0;
+    width: 95px;
+  }
+  
+  .interface-mode .dark {
+    color: var(--white);
+    font-family: var(--settings-p-font-family);
+    font-size: var(--settings-p-font-size);
+    font-style: var(--settings-p-font-style);
+    font-weight: var(--settings-p-font-weight);
+    height: 18px;
+    letter-spacing: var(--settings-p-letter-spacing);
+    line-height: var(--settings-p-line-height);
+    position: absolute;
+    text-align: center;
+  }
+  
+  .interface-mode .sun {
+    height: 19px;
+    left: 13px;
+    position: absolute;
+    top: 14px;
+    width: 19px;
+  }
+  
+  .interface-mode .bright {
+    color: var(--grey);
+    font-family: var(--settings-p-font-family);
+    font-size: var(--settings-p-font-size);
+    font-style: var(--settings-p-font-style);
+    font-weight: var(--settings-p-font-weight);
+    height: 18px;
+    letter-spacing: var(--settings-p-letter-spacing);
+    line-height: var(--settings-p-line-height);
+    position: absolute;
+    text-align: center;
+  }
+  
+  .interface-mode .moon {
+    height: 15px;
+    left: 115px;
+    position: absolute;
+    top: 16px;
+    width: 15px;
+  }
+  
+  .interface-mode .text-wrapper {
+    font-family: var(--settings-sec-head-font-family);
+    font-size: var(--settings-sec-head-font-size);
+    font-style: var(--settings-sec-head-font-style);
+    font-weight: var(--settings-sec-head-font-weight);
+    height: 26px;
+    left: 55px;
+    letter-spacing: var(--settings-sec-head-letter-spacing);
+    line-height: var(--settings-sec-head-line-height);
+    position: absolute;
+    text-align: center;
+    top: -15px;
+    width: 81px;
+  }
+  
+  .interface-mode .outline-amp-dark {
+    height: 15px;
+    left: 115.74px;
+    position: absolute;
+    top: 39.15px;
+    width: 15px;
+    z-index: 10;
+  }
+  
+  .interface-mode .outline-amp-light {
+    height: 19px;
+    left: 13.76px;
+    position: absolute;
+    top: 37.03px;
+    width: 19px;
+  }
+  
+  .interface-mode .default {
+    background-color: var(--white);
+    border-radius: 51px;
+  }
+  
+  .interface-mode .variant-2 {
+    background-color: var(--black);
+    border-radius: 30px;
+  }
+  
+  .interface-mode .property-1-2-default {
+    color: var(--black);
+  }
+  
+  .interface-mode .property-1-2-variant-2 {
+    color: var(--white);
+  }
+  
+  .interface-mode .overlap-group.default .overlap {
+    border-radius: 45px;
+    left: 0;
+  }
+  
+  .interface-mode .overlap-group.variant-2 .overlap {
+    border-radius: 31px;
+    left: 95px;
+  }
+  
+  .interface-mode .overlap-group.default .dark {
+    left: 39px;
+    top: 13px;
+    width: 44px;
+  }
+  
+  .interface-mode .overlap-group.variant-2 .dark {
+    left: 44px;
+    top: 14px;
+    width: 36px;
+  }
+  
+  .interface-mode .overlap-group.default .bright {
+    left: 139px;
+    top: 13px;
+    width: 36px;
+  }
+  
+  .interface-mode .overlap-group.variant-2 .bright {
+    left: 38px;
+    top: 14px;
+    width: 46px;
+  }
+  

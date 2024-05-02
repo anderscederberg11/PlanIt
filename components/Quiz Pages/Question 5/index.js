@@ -21,44 +21,40 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
   const handleOptionChange = (value) => {
     setSelectedOption(value);
     setShowError(false);
-    let score = 0; // Initialize score variable
-    // Assign scores based on selected options
+    let score = 0; 
+    
     switch (value) {
       case 'option1':
-        score = 0.5; // Assign score for option1
+        score = 0.5; 
         break;
       case 'option2':
-        score = 1.2; // Assign score for option2
+        score = 1.2; 
         break;
       case 'option3':
-        score = 2.4; // Assign score for option3
+        score = 2.4; 
         break;
       case 'option4':
-        score = 3.2; // Assign score for option4
+        score = 3.2; 
         break;
       default:
-        score = 0; // Default score
+        score = 0; 
         break;
     }
     console.log("Selected answer:", value, "with score:", score);
-    handleUserAnswer(5, score); // Updating the quiz's state with the selected answer and its score
+    handleUserAnswer(5, score); 
   };
 
   const handleFinishClick = () => {
     if (!selectedOption) {
-      setShowError(true); // Show error if no option is selected
+      setShowError(true); 
     } else {
       console.log("Finish clicked with selection");
       setShowError(false);
-      handleQuizCompleteClick(); // Proceed to complete the quiz
+      handleQuizCompleteClick(); 
     }
   };
 
-  // Uncomment and use if additional logic is needed upon finishing
-  // const handleFinishClick = () => {
-  //   console.log("FINISH clicked");
-  //   handleQuizCompleteClick();
-  // };
+
 
   return (
     <div>
@@ -69,7 +65,7 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
           customButtonStyle={customButtonStyle}
           href="#"
           text="FINISH"
-          onClickHandler={handleFinishClick} // Directly call or use handleFinishClick if additional logic is needed
+          onClickHandler={handleFinishClick}
         />
         {showError && <QuizError style={{ position: 'absolute', top: '-770px'}}/>}
         <styles></styles>
