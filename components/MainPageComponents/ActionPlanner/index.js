@@ -6,7 +6,7 @@ import styles from "@/components/MainPageComponents/ActionPlanner/ActionPlanner.
 export default function ActionPlanner({ handleGoHomeClick }){
     return(
         <>
-            <Header src="/icons/Home.svg" width="30" height="32"/>
+            <Header src="/icons/Home.svg" width="30" height="32" handleBackOrHomeClick={handleGoHomeClick}/>
             <MainText 
                 titleText="WELCOME TO THE ACTION PLANNER"
                 supplimentText="Answer a few questions about your lifestyle and habits to get personalized tips for reducing your carbon footprint and fighting climate change."

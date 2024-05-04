@@ -22,6 +22,7 @@
 .headerSectionIconRight{
     padding-right: 30px;
     padding-bottom: 40px;
+    cursor: pointer;
 }
 
 .headerSectionWords{

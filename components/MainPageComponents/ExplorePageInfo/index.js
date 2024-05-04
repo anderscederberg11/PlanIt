@@ -8,14 +8,15 @@ export default function ExplorePageInfo({
     pp1="Lorem posum dolor siet ameit",
     pp2="Lorem posum dolor siet ameit",
     pp3="Lorem posum dolor siet ameit",
-    pp4="Lorem posum dolor siet ameit"
+    pp4="Lorem posum dolor siet ameit",
+    handleBackToHomeClick
 }){
 
     return(
         <>
             <div className={styles.entirePageInfo}>
                 <div className={styles.entirePageInfoCenterer}>
-                    <Header src="/icons/longArrow.svg" width="31" height="20" handleBackOrHomeClick={""}/>
+                    <Header src="/icons/longArrow.svg" width="31" height="20" href="/" handleBackOrHomeClick={handleBackToHomeClick}/>
                     <div className={styles.innerContainer}>
                         <div className={styles.arrowContainer}>
                             <div className={styles.arrow}></div>

@@ -9,7 +9,8 @@ export default function ExplorePageCover({
     alt="",
     theTitleText,
     theSuppText,
-    infoPageLink
+    infoPageLink,
+    handleBackToExploreClick
 }){
     return(
         <>
@@ -23,7 +24,8 @@ export default function ExplorePageCover({
                 buttonText="START!"
                 buttonColorBg="var(--white)"
                 buttonColorPrimary="var(--green)"
-                // handleBackClick={""}
+                backButtonLink="/"
+                handleBackClick={handleBackToExploreClick}
             />
             <div className={styles.exploreCoverImageCenterer}>
                 <Image src={src} alt={alt} width={430} height={932} className={styles.exploreCoverImage}/> 
