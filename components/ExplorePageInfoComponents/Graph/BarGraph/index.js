@@ -106,7 +106,10 @@ export default function Graph1(){
                   font: {
                     family: fontFamily,
                     size: '14px'
-                  }
+                  },
+                  stepSize: 2,
+                  min: 0,
+                  max:8
                 }
               },
             },

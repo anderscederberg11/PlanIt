@@ -1,8 +1,9 @@
 .headerSection{
     width:100%;
-
     display:flex;
     justify-content: center;
+    z-index: 1000;
+    position:fixed;
 }
 
 .Test{
@@ -21,6 +22,7 @@
 .headerSectionIconRight{
     padding-right: 30px;
     padding-bottom: 40px;
+    cursor: pointer;
 }
 
 .headerSectionWords{

@@ -1,6 +1,7 @@
 import ButtonColoured from "../mainButton";
 import styles from '@/components/ButtonAndBack/ButtonAndBack.module.css'
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ButtonAndBack({ 
     linking, 
@@ -10,7 +11,8 @@ export default function ButtonAndBack({
     onClickHandlerSecondaryMainButton, 
     // tabbingBack="",
     tabbingButtonSecondary="0",
-    handleBackClick 
+    handleBackClick,
+    backButtonLink=""
 }){
     return(
         <>
@@ -24,19 +26,22 @@ export default function ButtonAndBack({
                     tabbingButton={tabbingButtonSecondary}
 
                 />
-                <button 
-                    onClick={handleBackClick} 
-                    tabIndex={0}
-                    className={styles.backButton}
-                >
-                    <Image 
-                        src="/icons/smallArrow.svg" 
-                        alt="small back arrow"
-                        width={6.25} 
-                        height={10} 
-                    />
-                    <p>Back</p>
-                </button>
+                <Link href={backButtonLink} className={styles.backButtonLink}>
+                    <button 
+                        onClick={handleBackClick} 
+                        tabIndex={0}
+                        className={styles.backButton}
+                    >
+                        <Image 
+                            src="/icons/smallArrow.svg" 
+                            alt="small back arrow"
+                            width={6.25} 
+                            height={10} 
+                        />
+                        <p>Back</p>
+                    </button>
+                </Link>
+
             </div>
         </>
     )

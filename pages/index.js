@@ -13,8 +13,7 @@ import ExplorePage from "@/components/MainPageComponents/ExplorePage";
 import QuizComplete from "@/components/Quiz Pages/QuizComplete";
 import Tutorial1 from "@/components/MainPageComponents/Tutorial/Tutorial1";
 import Tutorial2 from "@/components/MainPageComponents/Tutorial/Tutorial2";
-import Settings from "@/components/Settings";
-import { ThemeProvider } from "@/components/Theme";
+import About from "./about";
 
 
 
@@ -25,10 +24,9 @@ export default function Home() {
   const [showHomepage, setShowHomepage] = useState(false);
   const [showExplore, setShowExplore] = useState(false);
   const [showActionPlanner, setShowActionPlanner] = useState(false);
-  const [showTutorial1, setShowTutorial1] = useState(false)
-  const [showTutorial2, setShowTutorial2] = useState(false)
-
-  const [showQuizComplete, setShowQuizComplete] = useState(false)
+  const [showTutorial1, setShowTutorial1] = useState(false);
+  const [showTutorial2, setShowTutorial2] = useState(false);
+  const [showAboutPage, setShowAboutPage] = useState(false);
 
   const [animateEarth1, setAnimateEarth1] = useState(false);
 
@@ -64,14 +62,12 @@ export default function Home() {
   const handleActionPlanner = () => {
     setShowHomepage(false);
     setShowActionPlanner(true)
-    console.log('3', showLandingPage);
   }
 
   const handleHomePage = () => {
     setShowActionPlanner(false);
     setShowExplore(false)
     setShowHomepage(true);
-    console.log('4', showLandingPage);
   }
 
   //header area
@@ -85,6 +81,11 @@ export default function Home() {
     setShowExplore(false)
     setShowHomepage(true)
   }
+
+  const handleGoHomeFromAbout = () => {
+    setShowHomepage(true);
+    setShowAboutPage(false)
+  }; //----------------------------------------------------------------------------------------------------------------------
   //header area
 
   //footer area
@@ -98,6 +99,10 @@ export default function Home() {
     setShowActionPlanner(true)
   }
 
+  const handleAboutButtonClick = () => {
+    setShowAboutPage(true);
+    setShowHomepage(false)
+  };
   //footer area
 
   const handleQuizComplete = () => {
@@ -148,14 +153,11 @@ export default function Home() {
             <Footer 
               handleActionPlannerClick={handleActionPlanner}
               handleExplorePageClick={handleExplore}
+              handleAboutButtonClick={handleAboutButtonClick} 
             />
           </>
         )}
-        {showActionPlanner && <ActionPlanner handleGoHomeClick={handleHomePage}/>}
 
-
-        {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
-        {/* this no work for the show explore IDK ANYMORE*/}
         {showExplore && (
           <>
           <Header 
@@ -165,18 +167,24 @@ export default function Home() {
             handleBackOrHomeClick={handleGoHomeFromExplore}/>
           <Footer
             handleActionPlannerClick={handleActionPlannerOnExplore}
+            handleExplorePageClick={handleExplore}
+            handleAboutButtonClick={handleAboutButtonClick} 
           />
           </>
         )}
+        {/* FOOTER */}
+          {showActionPlanner && <ActionPlanner handleGoHomeClick={handleHomePage}/>}
+          {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
+          {showAboutPage && <About handleGoHomeClickFromAbout={handleGoHomeFromAbout}/>}
+        {/* FOOTER */}
 
-        {/* {showLandingPage && (
-          <Question5 handleQuizCompleteClick={handleQuizComplete} />
-        )}
-        {showQuizComplete && <QuizComplete/>} */}
+
+        {/* EXPLORE */}
+
+
+        {/* EXPLORE */}
+
         <Earth animateEarth={animateEarth1}/>
-        <ThemeProvider>
-          <Settings/>
-        </ThemeProvider>
       </main>
     </>
   );

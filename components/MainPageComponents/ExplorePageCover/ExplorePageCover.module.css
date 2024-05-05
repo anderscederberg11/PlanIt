@@ -1,3 +1,6 @@
+.exploreTopZIndex{
+}
+
 .exploreCoverImageCenterer{
     width:100%;
     position:absolute;
@@ -8,4 +11,12 @@
 }
 
 .exploreCoverImage{
+}
+
+.exploreStartButton{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    top:770px;
+    width:100%;
 }

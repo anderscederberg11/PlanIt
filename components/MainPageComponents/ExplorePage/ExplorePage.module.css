@@ -31,3 +31,7 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
+
+.carouselArea::-webkit-scrollbar {
+    display: none;
+}
