@@ -42,12 +42,12 @@ export default function Header({
         <>
             <header className={styles.headerSection} style={{ position }}>
                 <div className={styles.Test}>
-                    <Link href={href}><Image src={src} width={width} height={height} className={styles.headerSectionIconLeft} onClick={handleBackOrHomeClick}/></Link>
+                    <Link href={href}><Image src={src} width={width} height={height} className={styles.headerSectionIconLeft} onClick={handleBackOrHomeClick} /></Link>
                     <div className={styles.headerSectionWords}>
                         <h1 className={styles.headerSectionH1}>PlanIt</h1>
                         <h4 className={styles.headerSectionH2}>{name}</h4>
                     </div>
-                    <div onClick={toggleSettings}><Image src="/icons/settings.svg" width={40} height={40} className={styles.headerSectionIconRight}/></div>
+                    <div onClick={toggleSettings}><Image src="/icons/settings.svg" width={40} height={40} className={styles.headerSectionIconRight} alt="Settings Icon"/></div>
                 </div>
             </header>
             {showSettings && <ThemeProvider><Settings onClose={closeSettings}/></ThemeProvider>}

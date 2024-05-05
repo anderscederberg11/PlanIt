@@ -3,14 +3,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Carousel({
-    linking,
+    linking="",
     text,
     backgroundImage,
+    carouselItemClicked
 }){
     const [clicked, setClicked] = useState(false);
 
     const handleClick = () => {
         console.log('Button clicked Again');
+        if (carouselItemClicked){
+            carouselItemClicked();
+        }
     };
 
     return(

@@ -1,6 +1,5 @@
 .wrapper {
     width: 100%;
-    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +8,7 @@
 }
 
 .container {
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: start;
@@ -35,8 +34,7 @@
     color: var(--white);
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: -25px;
-    height: 100px;
+    height: 224.41px;
 }
 
 .card > .row > .icon {
@@ -49,19 +47,24 @@
     justify-content: center;
     align-items: center;
     margin: 15px;
+    margin-top: 160px;
 }
 
 .showinArea h4{
     font-family: var(--poppins);
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    transform: translateY(125px);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); 
 }
 
 .card > .row > .showinArea > .description {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     overflow: hidden;
     width: 300px;
-    height: 100px;
+    height: 140px;
     opacity: 0;
     transform: translateY(30px);
     transition-delay: .3s;
@@ -72,16 +75,11 @@
     color: var(--white);
     font-family: var(--poppins);
     font-size: var(--button);
-    margin-bottom: 40px;
-}
-
-.description h4 {
-    color: var(--white);
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
 .showinArea{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     transform: translateY(18px);
@@ -93,7 +91,7 @@
 }
 
 .container input:checked + label {
-    height: 300px;
+    height: 400px;
 }
 
 .container input:checked + label .description {
@@ -106,15 +104,7 @@
     transition: .6s cubic-bezier(.28,-0.03,0,.99); 
 }
 
-.card[for="c1"] {
-    /* background-image: url('./img1.jpeg'); */
-}
-.card[for="c2"] {
-    /* background-image: url('./img2.jpeg'); */
-}
-.card[for="c3"] {
-    /* background-image: url('./img3.jpeg'); */
-}
-.card[for="c4"] {
-    /* background-image: url('./img4.jpeg'); */
+.container input:checked + label .showinArea h4{
+    transform: translateY(0px) translateX(-60px);
+    transition: .6s cubic-bezier(.28,-0.03,0,.99); 
 }

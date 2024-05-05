@@ -62,14 +62,12 @@ export default function Home() {
   const handleActionPlanner = () => {
     setShowHomepage(false);
     setShowActionPlanner(true)
-    console.log('3', showLandingPage);
   }
 
   const handleHomePage = () => {
     setShowActionPlanner(false);
     setShowExplore(false)
     setShowHomepage(true);
-    console.log('4', showLandingPage);
   }
 
   //header area
@@ -179,6 +177,12 @@ export default function Home() {
           {showExplore && <ExplorePage handleGoHomeFromExplore={handleHomePage}/>} 
           {showAboutPage && <About handleGoHomeClickFromAbout={handleGoHomeFromAbout}/>}
         {/* FOOTER */}
+
+
+        {/* EXPLORE */}
+
+
+        {/* EXPLORE */}
 
         <Earth animateEarth={animateEarth1}/>
       </main>

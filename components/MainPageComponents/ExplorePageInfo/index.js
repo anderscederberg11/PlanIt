@@ -16,7 +16,7 @@ export default function ExplorePageInfo({
         <>
             <div className={styles.entirePageInfo}>
                 <div className={styles.entirePageInfoCenterer}>
-                    <Header src="/icons/longArrow.svg" width="31" height="20" href="/" handleBackOrHomeClick={handleBackToHomeClick}/>
+                    <Header src="/icons/Home.svg" width="30" height="32" handleBackOrHomeClick={handleBackToHomeClick}/>
                     <div className={styles.innerContainer}>
                         <div className={styles.arrowContainer}>
                             <div className={styles.arrow}></div>
