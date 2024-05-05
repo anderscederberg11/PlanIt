@@ -17,8 +17,6 @@
   
   .interface-mode .overlap {
     background-color: var(--green);
-    border: 0.6px solid;
-    border-color: var(--green);
     height: 48px;
     position: absolute;
     top: 0;
