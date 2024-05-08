@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function Volume() {
     
-    const [value, setValue] = useState(50); // Initial value set to 50
+    const [value, setValue] = useState(50); 
 
     const handleSliderChange = (event) => {
         const newValue = event.target.value;

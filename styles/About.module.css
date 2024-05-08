@@ -1,6 +1,6 @@
 .main {
     width: 100vw;
-    /* height: '932px'; */
+    /* height: 932px; */
     margin: 0 auto;
     padding: 0%;
     z-index: -3;
@@ -10,9 +10,12 @@
     margin: 0 auto;
     padding: 0;
     width: 430px;
-    height: 1910px;
+    display: flex;
+    height: 932px;
+    overflow: hidden;
     flex-shrink: 0;
-    z-index: -2;  
+    z-index: 5;  
+    border: 3px solid yellow;
 }
 
 .sebMainImage {

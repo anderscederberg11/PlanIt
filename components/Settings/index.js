@@ -12,11 +12,9 @@ export default function Settings({ onClose }) {
     const { theme } = useTheme();
 
     const themeStyles = {
-        '--background-color': theme === 'dark' ? '#000000' : '#F2F5EA', // Only the background changes
-        '--text-color': theme === 'dark' ? '#FFFFFF' : '#0C0C0C', // Only change non-white text
+        '--background-color': theme === 'dark' ? '#000000' : '#F2F5EA', 
+        '--text-color': theme === 'dark' ? '#FFFFFF' : '#0C0C0C', 
     };
-
-    // const [showSettings, setShowSettings] = useState(true);
     
     return(
         <>
