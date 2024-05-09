@@ -10,7 +10,7 @@ export default function HomePage({ handleBackClick }){
         handleBackClick();
     };
 
-    const [userTime, setUserTime] = useState([])
+    const [userTime, setUserTime] = useState([]);
     const [timezone, setTimezone] = useState([]);
 
     var apiKeyInfo = process.env.NEXT_PUBLIC_TIME;

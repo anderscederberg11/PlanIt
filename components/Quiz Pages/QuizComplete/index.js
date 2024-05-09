@@ -49,7 +49,7 @@ export default function QuizComplete({ score }) {
             <div className={styles.homeButton}>
                 <ButtonColoured 
                     href={{
-                        pathname: '/',
+                        pathname: '/indexCopy',
                     }}
                     text="HOME"
                 />

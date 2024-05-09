@@ -16,7 +16,7 @@ export default function ExplorePageCover({
     return(
         <>
             <div className={styles.exploreTopZIndex}>
-                <Header src="/icons/Home.svg" width="30" height="32"/>
+                <Header src="/icons/Home.svg" width="30" height="32" href="/indexCopy"/>
                 <MainText 
                     titleText={theTitleText}
                     supplimentText={theSuppText}

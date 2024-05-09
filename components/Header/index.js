@@ -42,14 +42,7 @@ export default function Header({
         <>
             <header className={styles.headerSection} style={{ position }}>
                 <div className={styles.Test}>
-                    <Link href={{
-                        pathway: '/',
-                        query: {
-                            name: localStorage.getItem('name'),
-                            showLanding: false,
-                            showHome: true
-                        }
-                    }}><Image src={src} width={width} height={height} className={styles.headerSectionIconLeft} onClick={handleBackOrHomeClick} /></Link>
+                    <Link href={href}><Image src={src} width={width} height={height} className={styles.headerSectionIconLeft} onClick={handleBackOrHomeClick} /></Link>
                     <div className={styles.headerSectionWords}>
                         <h1 className={styles.headerSectionH1}>PlanIt</h1>
                         <h4 className={styles.headerSectionH2}>{name}</h4>

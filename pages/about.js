@@ -7,7 +7,7 @@ export default function About({ handleGoHomeClickFromAbout }){
         <>
             <HeadArea title="About Us" description="We are Sebastian and Anders"/>
             <main className={`${styles.main} `}>
-                <Header src="/icons/Home.svg" width="30" height="32" handleBackOrHomeClick={handleGoHomeClickFromAbout} href="/"/>
+                <Header src="/icons/Home.svg" width="30" height="32" href="/indexCopy"/>
                 <div className={styles.aboutContainer}>
                     <div className={styles.sebMainImage}>
                         <img style={{width: '100%', height: '100%'}} alt="Astronaut in orange suit" src='/images/sebastro.png' />
