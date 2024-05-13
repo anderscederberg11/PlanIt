@@ -4,23 +4,27 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-
 export default function Earth({ animateEarth }) {
   const canvasRef = useRef();
   const earthRef = useRef();
-  const [isLoading, setIsLoading] = useState(true); //this is a bunch of dom stuff also for the loading message
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 430 / 932, 0.1, 200);
 
-    //camera.position.set(-25, 15, 20); THIS IS FOR CENTER POSITONING
-
-    camera.position.set(-25, 15, 20)
+    camera.position.set(-25, 15, 20);
 
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
     renderer.setSize(430, 932);
-    renderer.setClearColor(0x222222); // Greyish background
+
+    // Load the background texture
+    const loader = new THREE.TextureLoader();
+    loader.load('/images/sky.png', function (texture) {
+      texture.minFilter = THREE.LinearFilter; // Optional: Set the min filter for the texture
+      texture.magFilter = THREE.LinearFilter; // Optional: Set the mag filter for the texture
+      scene.background = texture;
+    });
 
     // Create lighting
     const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
@@ -28,17 +32,13 @@ export default function Earth({ animateEarth }) {
     scene.add(directionalLight);
 
     // Load the earth model
-    const loader = new GLTFLoader();
-    loader.load(
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load(
       '/planet-earth-nocloud.glb',
       function (gltf) {
         const earth = gltf.scene;
         earthRef.current = earth;
-
-        //earth.position.set(0,0,0) THIS IS FOR CENTER POSITIONING
-        earth.position.set(-10, 0, 15); //initial position
-        //earth.position.set(-17, -3, 13.7) //Secondary Position
-
+        earth.position.set(-10, 0, 15);
         scene.add(earth);
         setIsLoading(false);
       },
@@ -51,12 +51,12 @@ export default function Earth({ animateEarth }) {
       }
     );
 
-    // user control to rotate the earth
+    // User control to rotate the earth
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Enable damping for smoothher dragging
-    controls.dampingFactor = 0.8; // damping factor
-    controls.enableZoom = false; // Disable zooming
-    controls.enableRotate = false; // Disables rotation of the camera instead rotates earth
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.8;
+    controls.enableZoom = false;
+    controls.enableRotate = false;
 
     // Mouse interaction for rotating the earth
     let isDragging = false;
@@ -103,8 +103,8 @@ export default function Earth({ animateEarth }) {
           child.rotation.y += 0.0005;
         }
       });
-//----------------------------------------------------------------------------------------------------------------------------------
-      // Animate the Earth's position towards the target position. dont understand why it flashes off when it starts moving
+
+      // Animate the Earth's position towards the target position
       setTimeout(() => {
         if (animateEarth && earthRef.current) {
           const currentPosition = earthRef.current.position;
@@ -119,17 +119,16 @@ export default function Earth({ animateEarth }) {
             earthRef.current.position.copy(targetPosition);
           }
         }
-      }, 1); 
-//----------------------------------------------------------------------------------------------------------------------------------
+      }, 1);
+
       renderer.render(scene, camera);
     };
 
     animate();
+
     // Cleanup
     return () => {
-      renderer.dispose(); // Dispose of the renderer to prevent memory leaks
-    
-      // Remove event listeners if canvasRef.current is defined. too many canvases was the problem before loading one on the other
+      renderer.dispose();
       if (canvasRef.current) {
         canvasRef.current.removeEventListener('mousedown', onMouseDown, false);
         canvasRef.current.removeEventListener('mousemove', onMouseMove, false);
@@ -140,7 +139,13 @@ export default function Earth({ animateEarth }) {
 
   return (
     <div className={styles.earthPosition}>
-      {isLoading ? <div className={styles.loadingMessageBackground}><h1 className={styles.loadingMessage}>Loading your PlanIt...</h1></div> : <canvas ref={canvasRef} />}
+      {isLoading ? (
+        <div className={styles.loadingMessageBackground}>
+          <h1 className={styles.loadingMessage}>Loading your PlanIt...</h1>
+        </div>
+      ) : (
+        <canvas ref={canvasRef} />
+      )}
     </div>
   );
 }
