@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    z-index:1000
+    z-index:1000;
+    color: var(--text-color);
 }
 
 .blur {
@@ -26,7 +27,7 @@
     height: 460px;
     flex-shrink: 0;
     border-radius: 20px;
-    background: var(--white, #F2F5EA);
+    background-color: var(--background-color);
 }
 
 .settingsHeader {
@@ -50,7 +51,7 @@
 }
 
 .settingsText {
-    color: var(--black, #0C0C0C);
+    color: var(--text-color);
     text-align: center;
     font-family: Poppins;
     font-size: 18px;

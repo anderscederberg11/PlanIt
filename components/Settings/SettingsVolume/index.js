@@ -1,7 +1,10 @@
 import styles from "./Volume.module.css"
 import { useState } from "react"
+import { useTheme } from "@/components/Theme";
 
 export default function Volume() {
+
+    const { theme } = useTheme();
     
     const [value, setValue] = useState(50); 
 
@@ -10,6 +13,11 @@ export default function Volume() {
         setValue(newValue);
         event.target.style.backgroundSize = `${newValue}% 100%`;
     };
+
+    const themeStyles = {
+        '--volume-background-color': theme === 'dark' ? '#1A1A1A' : '#FFFFFF',
+        '--volume-text-color': theme === 'dark' ? '#FFFFFF' : '#000000',
+      };
 
     return (
         <>

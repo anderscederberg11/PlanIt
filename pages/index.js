@@ -14,6 +14,7 @@ import QuizComplete from "@/components/Quiz Pages/QuizComplete";
 import Tutorial1 from "@/components/MainPageComponents/Tutorial/Tutorial1";
 import Tutorial2 from "@/components/MainPageComponents/Tutorial/Tutorial2";
 import About from "./about";
+import { ThemeProvider } from "@/components/Theme";
 import { entireNavigation } from "@/utils/entireNavigation";
 
 
@@ -46,7 +47,7 @@ export default function Home() {
   } = entireNavigation();
 
   return (
-    <>
+    <ThemeProvider>
       <HeadArea title="Welcome to Planit!" description="We are an environment app raising awareness on earths most pressing issues"/>
       <main className={`${styles.main}`}>
         {showLandingPage && (
@@ -120,6 +121,6 @@ export default function Home() {
 
         <Earth animateEarth={animateEarth1}/>
       </main>
-    </>
+    </ThemeProvider>
   );
 }

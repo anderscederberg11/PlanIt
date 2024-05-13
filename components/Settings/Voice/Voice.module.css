@@ -1,5 +1,5 @@
 .voice {
-    background-color: var(--white);
+    background-color: var(--voice-background-color);
     border: 0.6px solid;
     border-color: var(--grey);
     border-radius: 46px;
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--black, #0C0C0C);
+    color: var(--voice-text-color);
     text-align: center;
     font-family: Poppins;
     font-size: 16px;

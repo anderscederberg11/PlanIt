@@ -1,0 +1,12 @@
+.mainContainer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* Other styles */
+}
+
+.settingsText {
+    /* Ensure text color is based on the theme */
+    color: var(--text-color);
+}
+
+/* Other styles */

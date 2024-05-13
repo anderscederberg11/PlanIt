@@ -1,9 +1,18 @@
 import { useState } from "react"
 import styles from "./TextSize.module.css"
+import { useTheme } from "@/components/Theme";
 
 export default function TextSize() {
+
+    const { theme } = useTheme();
     
     const [selectedSize, setSelectedSize] = useState('medium');
+
+    const themeStyles = {
+        '--size-background-color': theme === 'dark' ? '#1A1A1A' : '#FFFFFF',
+        '--size-text-color': theme === 'dark' ? '#FFFFFF' : '#000000',
+      };
+    
     return(
         <>
             <div className={styles.sizeContainer}>

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useReducer } from "react";
 import * as classes from "./Voice.module.css";
+import { useTheme } from "@/components/Theme";
 
 export const Voice = ({
   property1,
@@ -11,9 +12,16 @@ export const Voice = ({
   imagesOffWhite = "/images/off-white.svg",
   imagesOnGrey = "/images/on-grey.svg",
 }) => {
+  const { theme } = useTheme();
+  
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "default",
   });
+
+  const themeStyles = {
+    '--voice-background-color': theme === 'dark' ? '#1A1A1A' : '#FFFFFF',
+    '--voice-text-color': theme === 'dark' ? '#FFFFFF' : '#000000',
+  };
 
   return (
     <div
