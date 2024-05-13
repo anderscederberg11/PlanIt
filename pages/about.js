@@ -2,11 +2,11 @@ import HeadArea from "@/components/HeadArea";
 import Header from "@/components/Header";
 import styles from "@/styles/About.module.css";
 
-export default function About({ handleGoHomeClickFromAbout }){
+export default function About(){
     return(
         <>
             <HeadArea title="About Us" description="We are Sebastian and Anders"/>
-            <main className={`${styles.main} `}>
+            <main className={styles.mainContainer}>
                 <Header src="/icons/Home.svg" width="30" height="32" href="/indexCopy"/>
                 <div className={styles.aboutContainer}>
                     <div className={styles.sebMainImage}>

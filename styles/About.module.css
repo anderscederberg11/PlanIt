@@ -1,6 +1,4 @@
-.main {
-    width: 100vw;
-    /* height: 932px; */
+.mainContainer {
     margin: 0 auto;
     padding: 0%;
     z-index: -3;
@@ -8,19 +6,25 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-  }
+    overflow-y:hidden;
+}
 
-  .aboutContainer {
+.aboutContainer {
     margin: 0 auto;
     padding: 0;
     width: 430px;
+    height: 932px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    height: 932px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     flex-shrink: 0;
     z-index: 5;  
+}
+
+.aboutContainer::-webkit-scrollbar{
+    display: none;
 }
 
 .sebMainImage {

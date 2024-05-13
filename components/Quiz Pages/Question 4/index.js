@@ -1,12 +1,14 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Questions from "@/components/Questions";
 import Answers4 from "@/components/Quiz Components/Radio Answers/Answers 4";
 import ButtonAndBack from "@/components/ButtonAndBack";
 import QuizError from "@/components/Quiz Components/Quiz Error";
+import QuizQuit from '@/components/Quiz Components/QuizQuit';
 
 export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showError, setShowError] = useState(false);  
+  const [showQuitPopup, setShowQuitPopup] = useState(false)
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
@@ -44,6 +46,14 @@ export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
     }
   };
 
+  const showQuit = () => {
+    setShowQuitPopup(true)
+  }
+
+  const closeQuit = () => {
+    setShowQuitPopup(false)
+  }
+
   return (
     <div>
       <Questions questionText="How often do you take flights for leisure or business travel?" />
@@ -55,8 +65,10 @@ export default function Question4({ handleQuizNext4Click, handleUserAnswer }) {
         buttonColorPrimary='var(--green)'
         onClickHandlerSecondaryMainButton={handleContinueClick}
         nextQuestionHandler={handleQuizNext4Click}
+        handleBackClick={showQuit}
       />
       {showError && <QuizError/>}
+      {showQuitPopup && <QuizQuit onClose={closeQuit}/>}
     </div>
   );
 }

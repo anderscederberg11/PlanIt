@@ -26,7 +26,6 @@ export default function ExplorePage(){
                     </div>
                 </div>
             </div>
-            <Footer/>
         </>
     )
 }

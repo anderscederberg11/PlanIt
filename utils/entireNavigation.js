@@ -57,7 +57,7 @@ export function entireNavigation(){
     const handleLandingPage = () => {
       setShowHomepage(false)
       setShowLandingPage(true)
-      // setAnimateEarth1(false); //earth SHOULD animation back to original 
+      // setAnimateEarth1(false); //earth SHOULD animation back to original but
     }
   
     const handleGoHomeFromExplore = () => {

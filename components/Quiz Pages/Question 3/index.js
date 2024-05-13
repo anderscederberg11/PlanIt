@@ -3,10 +3,12 @@ import Questions from "@/components/Questions";
 import ButtonAndBack from "@/components/ButtonAndBack";
 import YesNoButton from "@/components/Quiz Components/YesNoButton";
 import QuizError from "@/components/Quiz Components/Quiz Error";
+import QuizQuit from '@/components/Quiz Components/QuizQuit';
 
 export default function Question3({ handleQuizNext3Click, handleUserAnswer }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);  
   const [showError, setShowError] = useState(false);  
+  const [showQuitPopup, setShowQuitPopup] = useState(false)
 
   const handleYes = () => {
     console.log("Yes button clicked");
@@ -31,6 +33,14 @@ export default function Question3({ handleQuizNext3Click, handleUserAnswer }) {
       handleQuizNext3Click(); 
     }
   };
+  
+  const showQuit = () => {
+    setShowQuitPopup(true)
+  }
+
+  const closeQuit = () => {
+    setShowQuitPopup(false)
+  }
 
   return (
     <div>
@@ -43,7 +53,9 @@ export default function Question3({ handleQuizNext3Click, handleUserAnswer }) {
         buttonColorBg='var(--white)' 
         buttonColorPrimary='var(--green)' 
         onClickHandlerSecondaryMainButton={handleContinueClick}
+        handleBackClick={showQuit}
       />
+      {showQuitPopup && <QuizQuit onClose={closeQuit}/>}
     </div>
   );
 }

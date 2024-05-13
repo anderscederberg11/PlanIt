@@ -54,8 +54,6 @@ export default function Question5({ handleQuizCompleteClick, handleUserAnswer })
     }
   };
 
-
-
   return (
     <div>
       <Questions questionText="Do you actively try to conserve energy at home (turning off lights, unplugging devices, etc.)?" />
