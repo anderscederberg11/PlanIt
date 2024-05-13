@@ -68,7 +68,7 @@ export function entireNavCopy(){
     const handleGoHomeFromAbout = () => {
       setShowHomepage(true);
       setShowAboutPage(false)
-    }; //----------------------------------------------------------------------------------------------------------------------
+    };
     //header area
   
     //footer area

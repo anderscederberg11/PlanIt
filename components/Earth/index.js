@@ -8,7 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 export default function Earth({ animateEarth }) {
   const canvasRef = useRef();
   const earthRef = useRef();
-  const [isLoading, setIsLoading] = useState(true); //this is a bunch of dom stuff
+  const [isLoading, setIsLoading] = useState(true); //this is a bunch of dom stuff also for the loading message
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -51,12 +51,12 @@ export default function Earth({ animateEarth }) {
       }
     );
 
-    // Enable user control to rotate the earth
+    // user control to rotate the earth
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true; // Enable damping for smoothher dragging
-    controls.dampingFactor = 0.8; // Adjust damping factor
+    controls.dampingFactor = 0.8; // damping factor
     controls.enableZoom = false; // Disable zooming
-    controls.enableRotate = false; // Disables rotation of the camera
+    controls.enableRotate = false; // Disables rotation of the camera instead rotates earth
 
     // Mouse interaction for rotating the earth
     let isDragging = false;
@@ -104,7 +104,7 @@ export default function Earth({ animateEarth }) {
         }
       });
 //----------------------------------------------------------------------------------------------------------------------------------
-      // Animate the Earth's position towards the target position
+      // Animate the Earth's position towards the target position. dont understand why it flashes off when it starts moving
       setTimeout(() => {
         if (animateEarth && earthRef.current) {
           const currentPosition = earthRef.current.position;
@@ -119,7 +119,7 @@ export default function Earth({ animateEarth }) {
             earthRef.current.position.copy(targetPosition);
           }
         }
-      }, 2000);
+      }, 1); 
 //----------------------------------------------------------------------------------------------------------------------------------
       renderer.render(scene, camera);
     };
@@ -129,7 +129,7 @@ export default function Earth({ animateEarth }) {
     return () => {
       renderer.dispose(); // Dispose of the renderer to prevent memory leaks
     
-      // Remove event listeners if canvasRef.current is defined
+      // Remove event listeners if canvasRef.current is defined. too many canvases was the problem before loading one on the other
       if (canvasRef.current) {
         canvasRef.current.removeEventListener('mousedown', onMouseDown, false);
         canvasRef.current.removeEventListener('mousemove', onMouseMove, false);
